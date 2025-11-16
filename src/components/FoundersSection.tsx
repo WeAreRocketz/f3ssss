@@ -39,20 +39,21 @@ const FoundersSection = () => {
             {founders.map((founder, index) => (
               <div 
                 key={index}
-                className="bg-card rounded-3xl p-8 shadow-xl border border-border hover:border-accent/30 transition-all duration-300 hover-lift space-y-6"
+                className="bg-card rounded-3xl p-8 shadow-xl border border-border hover:border-accent/30 transition-all duration-300 hover-lift space-y-6 hover:shadow-[0_0_40px_rgba(197,162,83,0.15)]"
               >
-                <div className="flex items-start gap-4">
-                  <div className={`w-16 h-16 rounded-2xl bg-${founder.color}/10 flex items-center justify-center flex-shrink-0`}>
-                    <founder.icon className={`w-8 h-8 text-${founder.color}`} />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-heading font-bold mb-1">{founder.name}</h3>
-                    <p className="text-accent font-semibold">{founder.role}</p>
-                  </div>
+                {/* Photo placeholder - você pode substituir por imagens reais */}
+                <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border-4 border-accent/20 flex items-center justify-center overflow-hidden shadow-[0_0_25px_rgba(197,162,83,0.3)]">
+                  <founder.icon className="w-16 h-16 text-accent" />
+                  {/* Substitua por: <img src="/path/to/founder-photo.jpg" alt={founder.name} className="w-full h-full object-cover" /> */}
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  {founder.description}
-                </p>
+                
+                <div className="text-center">
+                  <h3 className="text-2xl font-heading font-bold mb-2">{founder.name}</h3>
+                  <p className="text-accent font-semibold text-lg mb-4">{founder.role}</p>
+                  <p className="text-muted-foreground leading-relaxed text-left">
+                    {founder.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
