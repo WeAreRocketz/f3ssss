@@ -74,7 +74,8 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent via-accent to-accent/80 bg-clip-text text-transparent;
+    filter: drop-shadow(0 0 8px hsl(var(--accent) / 0.3));
   }
 
   .animate-fade-in-up {
@@ -95,6 +96,18 @@ All colors MUST be HSL.
 
   .container-custom {
     @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 10px hsl(var(--accent) / 0.5),
+                0 0 20px hsl(var(--accent) / 0.3),
+                0 0 30px hsl(var(--accent) / 0.2);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--accent) / 0.8),
+                 0 0 20px hsl(var(--accent) / 0.5),
+                 0 0 30px hsl(var(--accent) / 0.3);
   }
 }
 

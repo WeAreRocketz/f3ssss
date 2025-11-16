@@ -29,11 +29,11 @@ const DifferentialSection = () => {
       <div className="container-custom">
         <div className="max-w-5xl mx-auto space-y-16">
           {/* Header */}
-          <div className="text-center space-y-6 animate-fade-in-up">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
+          <div className="text-center space-y-6 animate-fade-in-up px-4">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight max-w-4xl mx-auto">
               Nós não só ensinamos marketing.
             </h2>
-            <h3 className="text-2xl md:text-4xl font-heading text-accent">
+            <h3 className="text-2xl md:text-4xl font-heading text-gradient-gold max-w-4xl mx-auto">
               Nós formamos o time da sua empresa.
             </h3>
             
@@ -51,20 +51,20 @@ const DifferentialSection = () => {
             </p>
 
             {/* Differentials grid */}
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {differentials.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex gap-4 p-6 rounded-2xl bg-secondary/50 hover:bg-accent/10 border border-transparent hover:border-accent/30 transition-all duration-300 hover-lift"
+                  className="flex flex-col items-center text-center gap-4 p-8 rounded-2xl bg-gradient-to-b from-secondary/80 to-secondary/40 hover:from-accent/10 hover:to-accent/5 border border-border hover:border-accent/30 transition-all duration-300 hover-lift shadow-lg hover:shadow-[0_0_30px_rgba(197,162,83,0.2)]"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                      <item.icon className="w-6 h-6 text-accent" />
+                    <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shadow-[0_0_20px_rgba(197,162,83,0.2)]">
+                      <item.icon className="w-8 h-8 text-accent" />
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-heading font-semibold text-lg mb-2">{item.title}</h4>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                    <h4 className="font-heading font-semibold text-xl mb-3">{item.title}</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}

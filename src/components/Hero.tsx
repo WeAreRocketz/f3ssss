@@ -12,10 +12,13 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-sm font-medium text-accent">
-            <Rocket className="w-4 h-4" />
-            Forme o time da sua própria agência interna
+          {/* Badge - Full Width Bar */}
+          <div className="w-full mb-8 animate-fade-in -mx-4 sm:mx-0">
+            <div className="bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border-y border-accent/30 px-6 py-4 shadow-[0_0_20px_rgba(197,162,83,0.3)]">
+              <p className="text-accent text-sm md:text-base font-semibold text-center">
+                ✨ Forme o time da sua própria agência interna
+              </p>
+            </div>
           </div>
 
           {/* Main Headline */}
@@ -73,12 +76,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-accent/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-        </div>
-      </div>
     </section>
   );
 };
