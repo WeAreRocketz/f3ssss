@@ -10,10 +10,12 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import GoldLight from "@/components/GoldLight";
+import TrackingScripts from "@/components/TrackingScripts";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <TrackingScripts />
       <Header />
       <Hero />
       

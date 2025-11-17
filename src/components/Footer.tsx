@@ -1,7 +1,10 @@
 import { MapPin, Mail, Phone } from "lucide-react";
 import f3sLogo from "@/assets/f3s-logo.png";
+import { useContent } from "@/hooks/useContent";
 
 const Footer = () => {
+  const { content } = useContent();
+  
   return (
     <footer className="bg-primary text-primary-foreground py-12 border-t border-primary-foreground/10">
       <div className="container-custom">
@@ -25,11 +28,23 @@ const Footer = () => {
               </div>
               <div className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>(47) 99999-9999</span>
+                <a 
+                  href={`https://wa.me/${content['settings.footerWhatsapp']}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
+                  {content['settings.footerWhatsapp']?.replace(/(\d{2})(\d{2})(\d{5})(\d{4})/, '+$1 ($2) $3-$4') || '(47) 99999-9999'}
+                </a>
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span>contato@f3s.com.br</span>
+                <a 
+                  href={`mailto:${content['settings.footerEmail']}`}
+                  className="hover:text-accent transition-colors"
+                >
+                  {content['settings.footerEmail'] || 'contato@f3s.com.br'}
+                </a>
               </div>
             </div>
           </div>
