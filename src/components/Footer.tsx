@@ -29,7 +29,7 @@ const Footer = () => {
               <div className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
                 <a 
-                  href={`https://wa.me/${content['settings.footerWhatsapp']}`}
+                  href={`https://wa.me/${(content['settings.footerWhatsapp'] || '5547999999999').replace(/\D/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-accent transition-colors"

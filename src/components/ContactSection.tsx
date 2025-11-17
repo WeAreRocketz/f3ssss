@@ -62,8 +62,10 @@ const ContactSection = () => {
 
 Quero saber mais sobre o programa F3S TEAM!`;
 
-    const whatsappNumber = content['settings.whatsapp'] || '5547999999999';
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    // Clean WhatsApp number (remove all non-numeric characters)
+    const rawNumber = content['settings.whatsapp'] || '5547999999999';
+    const cleanNumber = rawNumber.replace(/\D/g, '');
+    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
     
