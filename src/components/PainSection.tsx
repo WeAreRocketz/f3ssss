@@ -93,7 +93,7 @@ const PainSection = () => {
               <Rocket className="w-5 h-5" />
               Quero Treinar Minha Equipe
             </ShinyButton>
-              <ShinyButton size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              <ShinyButton size="lg" variant="outline" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 <Calendar className="w-5 h-5" />
                 Agendar Diagnóstico Gratuito
               </ShinyButton>
