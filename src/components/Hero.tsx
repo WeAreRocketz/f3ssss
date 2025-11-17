@@ -12,13 +12,13 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-15 hidden md:block"
+          className="w-full h-full object-cover opacity-50 hidden md:block"
         >
           <source src={bgDeskVideo} type="video/mp4" />
         </video>
@@ -27,7 +27,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-15 md:hidden"
+          className="w-full h-full object-cover opacity-50 md:hidden"
         >
           <source src={bgMobVideo} type="video/mp4" />
         </video>
