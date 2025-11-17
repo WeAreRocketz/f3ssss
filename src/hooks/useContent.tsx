@@ -84,6 +84,15 @@ const defaultContent: ContentData = {
   'settings.googleAnalytics': '',
   'settings.customScripts': '',
   'settings.typeform': '', // Typeform embed code or URL
+  
+  // Bio Page
+  'bio.logo': '',
+  'bio.button1.text': 'Link Um',
+  'bio.button1.url': 'https://example.com',
+  'bio.button2.text': 'Link Dois',
+  'bio.button2.url': 'https://example.com',
+  'bio.button3.text': 'Link Três',
+  'bio.button3.url': 'https://example.com',
 };
 
 export const ContentProvider = ({ children }: { children: ReactNode }) => {

@@ -176,89 +176,176 @@ const Admin = () => {
       </header>
 
       <main className="container-custom py-8">
-        <Tabs defaultValue="hero" className="space-y-6">
-          <TabsList className="grid grid-cols-3 lg:grid-cols-9 gap-2">
-            <TabsTrigger value="hero">Hero</TabsTrigger>
-            <TabsTrigger value="pain">Pain</TabsTrigger>
-            <TabsTrigger value="differential">Diferenciais</TabsTrigger>
-            <TabsTrigger value="founders">Fundadores</TabsTrigger>
-            <TabsTrigger value="program">Programa</TabsTrigger>
-            <TabsTrigger value="location">Localização</TabsTrigger>
-            <TabsTrigger value="contact">Contato</TabsTrigger>
+        <Tabs defaultValue="homepage" className="space-y-6">
+          <TabsList className="grid grid-cols-2 lg:grid-cols-5 gap-2">
+            <TabsTrigger value="homepage">Homepage</TabsTrigger>
+            <TabsTrigger value="bio">Bio</TabsTrigger>
             <TabsTrigger value="images">Imagens</TabsTrigger>
             <TabsTrigger value="settings">Configurações</TabsTrigger>
             <TabsTrigger value="versions">Histórico</TabsTrigger>
           </TabsList>
+          
+          {/* Homepage Tab with nested tabs */}
+          <TabsContent value="homepage">
+            <Tabs defaultValue="hero" className="space-y-6">
+              <TabsList className="grid grid-cols-3 lg:grid-cols-7 gap-2">
+                <TabsTrigger value="hero">Hero</TabsTrigger>
+                <TabsTrigger value="pain">Pain</TabsTrigger>
+                <TabsTrigger value="differential">Diferenciais</TabsTrigger>
+                <TabsTrigger value="founders">Fundadores</TabsTrigger>
+                <TabsTrigger value="program">Programa</TabsTrigger>
+                <TabsTrigger value="location">Localização</TabsTrigger>
+                <TabsTrigger value="contact">Contato</TabsTrigger>
+              </TabsList>
 
-          <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
-            <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero</h2>
-            <ContentEditor contentKey="hero.headline" label="Título Principal (Parte 1)" />
-            <ContentEditor contentKey="hero.headline.gold" label="Título Principal (Parte Dourada)" />
-            <ContentEditor contentKey="hero.subheadline" label="Subtítulo" />
-            <ContentEditor contentKey="hero.description" label="Descrição" multiline />
+              <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero</h2>
+                <ContentEditor contentKey="hero.headline" label="Título Principal (Parte 1)" />
+                <ContentEditor contentKey="hero.headline.gold" label="Título Principal (Parte Dourada)" />
+                <ContentEditor contentKey="hero.subheadline" label="Subtítulo" />
+                <ContentEditor contentKey="hero.description" label="Descrição" multiline />
+              </TabsContent>
+
+              <TabsContent value="pain" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Pain</h2>
+                <ContentEditor contentKey="pain.headline" label="Título" />
+                <ContentEditor contentKey="pain.subheadline" label="Subtítulo" />
+                <ContentEditor contentKey="pain.text1" label="Texto 1" multiline />
+                <ContentEditor contentKey="pain.text2" label="Texto 2" multiline />
+                <ContentEditor contentKey="pain.mission" label="Missão F3S" />
+              </TabsContent>
+
+              <TabsContent value="differential" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Diferenciais</h2>
+                <ContentEditor contentKey="differential.headline" label="Título" />
+                <ContentEditor contentKey="differential.subheadline" label="Subtítulo" />
+              </TabsContent>
+
+              <TabsContent value="founders" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Fundadores</h2>
+                <ContentEditor contentKey="founders.headline" label="Título da Seção (Parte 1)" />
+                <ContentEditor contentKey="founders.headline.gold" label="Título da Seção (Parte Dourada)" />
+                <ContentEditor contentKey="founders.headline.suffix" label="Título da Seção (Parte Final)" />
+                
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">Ariston Ferraz</h3>
+                  <ContentEditor contentKey="founders.ariston.name" label="Nome" />
+                  <ContentEditor contentKey="founders.ariston.role" label="Cargo" />
+                  <ContentEditor contentKey="founders.ariston.description" label="Descrição" multiline />
+                  <ContentEditor contentKey="founders.ariston.quote" label="Citação" multiline />
+                </div>
+
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">Gilvane Soares</h3>
+                  <ContentEditor contentKey="founders.gilvane.name" label="Nome" />
+                  <ContentEditor contentKey="founders.gilvane.role" label="Cargo" />
+                  <ContentEditor contentKey="founders.gilvane.description" label="Descrição" multiline />
+                  <ContentEditor contentKey="founders.gilvane.quote" label="Citação" multiline />
+                </div>
+                
+                <div className="border-t pt-4 mt-4">
+                  <ContentEditor contentKey="founders.banner" label="Banner Final" multiline />
+                </div>
+              </TabsContent>
+
+              <TabsContent value="program" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Programa</h2>
+                <ContentEditor contentKey="program.headline" label="Título" />
+                <ContentEditor contentKey="program.subheadline" label="Subtítulo" />
+              </TabsContent>
+
+              <TabsContent value="location" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Localização</h2>
+                <ContentEditor contentKey="location.headline" label="Título (Parte 1)" />
+                <ContentEditor contentKey="location.headline.gold" label="Título (Parte Dourada)" />
+                <ContentEditor contentKey="location.subheadline" label="Subtítulo" />
+                <ContentEditor contentKey="location.city" label="Cidade" />
+                <ContentEditor contentKey="location.subtitle" label="Subtítulo da Localização" />
+              </TabsContent>
+
+              <TabsContent value="contact" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Contato</h2>
+                <ContentEditor contentKey="contact.headline" label="Título" />
+                <ContentEditor contentKey="contact.subheadline" label="Subtítulo" />
+              </TabsContent>
+            </Tabs>
           </TabsContent>
-
-          <TabsContent value="pain" className="space-y-6 bg-card rounded-2xl p-6">
-            <h2 className="text-2xl font-heading font-bold mb-4">Seção Pain</h2>
-            <ContentEditor contentKey="pain.headline" label="Título" />
-            <ContentEditor contentKey="pain.subheadline" label="Subtítulo" />
-            <ContentEditor contentKey="pain.text1" label="Texto 1" multiline />
-            <ContentEditor contentKey="pain.text2" label="Texto 2" multiline />
-            <ContentEditor contentKey="pain.mission" label="Missão F3S" />
-          </TabsContent>
-
-          <TabsContent value="differential" className="space-y-6 bg-card rounded-2xl p-6">
-            <h2 className="text-2xl font-heading font-bold mb-4">Seção Diferenciais</h2>
-            <ContentEditor contentKey="differential.headline" label="Título" />
-            <ContentEditor contentKey="differential.subheadline" label="Subtítulo" />
-          </TabsContent>
-
-          <TabsContent value="founders" className="space-y-6 bg-card rounded-2xl p-6">
-            <h2 className="text-2xl font-heading font-bold mb-4">Seção Fundadores</h2>
-            <ContentEditor contentKey="founders.headline" label="Título da Seção (Parte 1)" />
-            <ContentEditor contentKey="founders.headline.gold" label="Título da Seção (Parte Dourada)" />
-            <ContentEditor contentKey="founders.headline.suffix" label="Título da Seção (Parte Final)" />
+          
+          {/* Bio Tab */}
+          <TabsContent value="bio" className="space-y-6 bg-card rounded-2xl p-6">
+            <h2 className="text-2xl font-heading font-bold mb-4">Página Bio</h2>
             
-            <div className="border-t pt-4 mt-4">
-              <h3 className="text-xl font-semibold mb-3">Ariston Ferraz</h3>
-              <ContentEditor contentKey="founders.ariston.name" label="Nome" />
-              <ContentEditor contentKey="founders.ariston.role" label="Cargo" />
-              <ContentEditor contentKey="founders.ariston.description" label="Descrição" multiline />
-              <ContentEditor contentKey="founders.ariston.quote" label="Citação" multiline />
+            <div className="space-y-6">
+              <ImageUploader
+                label="Logo da Bio"
+                contentKey="bio.logo"
+                currentImage={content['bio.logo']}
+                onImageChange={updateContent}
+              />
+              
+              <div className="border-t pt-6">
+                <h3 className="text-xl font-semibold mb-4">Botões</h3>
+                {[1, 2, 3, 4, 5, 6].map((num) => {
+                  const hasButton = content[`bio.button${num}.text`];
+                  if (!hasButton && num > 3) return null;
+                  
+                  return (
+                    <div key={num} className="space-y-4 p-4 border rounded-lg mb-4 relative">
+                      <h4 className="font-semibold">Botão {num}</h4>
+                      <ContentEditor 
+                        contentKey={`bio.button${num}.text`} 
+                        label="Texto do Botão" 
+                      />
+                      <ContentEditor 
+                        contentKey={`bio.button${num}.url`} 
+                        label="URL do Botão" 
+                      />
+                      {num > 3 && (
+                        <Button 
+                          size="sm" 
+                          variant="destructive"
+                          onClick={() => {
+                            updateContent(`bio.button${num}.text`, '');
+                            updateContent(`bio.button${num}.url`, '');
+                            toast({
+                              title: 'Botão removido!',
+                              description: `O botão ${num} foi removido com sucesso.`,
+                            });
+                            setTimeout(() => window.location.reload(), 500);
+                          }}
+                        >
+                          Remover Botão
+                        </Button>
+                      )}
+                    </div>
+                  );
+                })}
+                
+                <Button 
+                  onClick={() => {
+                    const nextNum = [4, 5, 6].find(num => !content[`bio.button${num}.text`]);
+                    if (nextNum) {
+                      updateContent(`bio.button${nextNum}.text`, `Link ${nextNum}`);
+                      updateContent(`bio.button${nextNum}.url`, 'https://example.com');
+                      toast({
+                        title: 'Botão adicionado!',
+                        description: `Novo botão ${nextNum} foi adicionado. Configure o texto e URL.`,
+                      });
+                      setTimeout(() => window.location.reload(), 500);
+                    } else {
+                      toast({
+                        title: 'Limite atingido',
+                        description: 'Você já tem o máximo de 6 botões.',
+                        variant: 'destructive',
+                      });
+                    }
+                  }}
+                  className="w-full"
+                >
+                  Adicionar Novo Botão
+                </Button>
+              </div>
             </div>
-
-            <div className="border-t pt-4 mt-4">
-              <h3 className="text-xl font-semibold mb-3">Gilvane Soares</h3>
-              <ContentEditor contentKey="founders.gilvane.name" label="Nome" />
-              <ContentEditor contentKey="founders.gilvane.role" label="Cargo" />
-              <ContentEditor contentKey="founders.gilvane.description" label="Descrição" multiline />
-              <ContentEditor contentKey="founders.gilvane.quote" label="Citação" multiline />
-            </div>
-
-            <div className="border-t pt-4 mt-4">
-              <ContentEditor contentKey="founders.banner" label="Banner F3S" multiline />
-            </div>
-          </TabsContent>
-
-          <TabsContent value="program" className="space-y-6 bg-card rounded-2xl p-6">
-            <h2 className="text-2xl font-heading font-bold mb-4">Seção Programa</h2>
-            <ContentEditor contentKey="program.headline" label="Título" />
-            <ContentEditor contentKey="program.subheadline" label="Subtítulo" />
-          </TabsContent>
-
-          <TabsContent value="location" className="space-y-6 bg-card rounded-2xl p-6">
-            <h2 className="text-2xl font-heading font-bold mb-4">Seção Localização</h2>
-            <ContentEditor contentKey="location.headline" label="Título (Parte 1)" />
-            <ContentEditor contentKey="location.headline.gold" label="Título (Parte Dourada)" />
-            <ContentEditor contentKey="location.subheadline" label="Subtítulo" />
-            <ContentEditor contentKey="location.city" label="Cidade" />
-            <ContentEditor contentKey="location.subtitle" label="Subtítulo da Localização" />
-          </TabsContent>
-
-          <TabsContent value="contact" className="space-y-6 bg-card rounded-2xl p-6">
-            <h2 className="text-2xl font-heading font-bold mb-4">Seção Contato</h2>
-            <ContentEditor contentKey="contact.headline" label="Título" />
-            <ContentEditor contentKey="contact.subheadline" label="Subtítulo" />
           </TabsContent>
 
           <TabsContent value="settings" className="space-y-6 bg-card rounded-2xl p-6">
