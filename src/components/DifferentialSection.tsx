@@ -25,7 +25,7 @@ const DifferentialSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-secondary/30">
+    <section id="diferenciais" className="section-padding bg-gradient-to-b from-background to-secondary/30">
       <div className="container-custom">
         <div className="max-w-5xl mx-auto space-y-16">
           {/* Header */}
