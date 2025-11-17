@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, Calendar } from "lucide-react";
+import { Menu, Calendar, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ShinyButton from "@/components/ShinyButton";
 import f3sLogo from "@/assets/f3s-logo.png";
@@ -66,13 +66,16 @@ const Header = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
               </button>
             ))}
-            <ShinyButton
-              onClick={() => scrollToSection("contact")}
-              size="default"
-            >
-              <Calendar className="w-4 h-4" />
-              Agendar Diagnóstico
-            </ShinyButton>
+            <div className="flex flex-col items-center gap-1">
+              <ShinyButton
+                onClick={() => scrollToSection("contact")}
+                size="default"
+              >
+                <Rocket className="w-4 h-4" />
+                Treinar Equipe
+              </ShinyButton>
+              <span className="text-[10px] text-muted-foreground">Agende o diagnóstico gratuito</span>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -96,15 +99,16 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
-            <div className="px-4 pt-2">
+            <div className="px-4 pt-2 flex flex-col items-center gap-2">
               <ShinyButton
                 onClick={() => scrollToSection("contact")}
                 size="default"
                 className="w-full"
               >
-                <Calendar className="w-4 h-4" />
-                Agendar Diagnóstico
+                <Rocket className="w-4 h-4" />
+                Quero Treinar Minha Equipe
               </ShinyButton>
+              <span className="text-xs text-muted-foreground">Agende o diagnóstico gratuito</span>
             </div>
           </nav>
         )}

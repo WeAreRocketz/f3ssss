@@ -45,7 +45,7 @@ const Hero = () => {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center pt-4 px-4">
+          <div className="flex flex-col items-center gap-2 pt-4 px-4">
             <ShinyButton
               size="lg"
               className="w-full sm:w-auto"
@@ -54,31 +54,24 @@ const Hero = () => {
               <Rocket className="w-5 h-5" />
               Quero Treinar Minha Equipe
             </ShinyButton>
-            
-            <ShinyButton
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Calendar className="w-5 h-5" />
-              Agendar Diagnóstico Gratuito
-            </ShinyButton>
+            <p className="text-sm text-muted-foreground">
+              Agende o diagnóstico gratuito
+            </p>
           </div>
 
           {/* Trust indicators */}
-          <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center text-sm text-muted-foreground px-4">
-            <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto">
-              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
+          <div className="pt-8 flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center text-xs sm:text-sm text-muted-foreground px-4">
+            <div className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto whitespace-nowrap">
+              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine" />
               <span className="text-center">Presencial em Itapema/SC</span>
             </div>
-            <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto">
-              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
-              <span className="text-center">Formação Completa em 4 Semanas</span>
+            <div className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto whitespace-nowrap">
+              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine" />
+              <span className="text-center">Formação em 4 Semanas</span>
             </div>
-            <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto">
-              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
-              <span className="text-center">Time Estratégico e Operacional</span>
+            <div className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto whitespace-nowrap">
+              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine" />
+              <span className="text-center">Time Estratégico</span>
             </div>
           </div>
         </div>
