@@ -31,10 +31,13 @@ const ScrollReveal = ({ children, className = "", delay = 0, direction = 'up' }:
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Elemento está visível - aparecer
             setTimeout(() => {
               entry.target.classList.add("reveal-visible");
             }, delay);
-            observer.unobserve(entry.target);
+          } else {
+            // Elemento não está visível - desaparecer
+            entry.target.classList.remove("reveal-visible");
           }
         });
       },
