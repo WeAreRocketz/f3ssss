@@ -24,6 +24,9 @@ const PainSection = () => {
 
   return (
     <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
+      {/* Golden top lighting */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-accent/20 via-accent/10 to-transparent pointer-events-none z-10" />
+      
       {/* Background pattern */}
       <AnimatedBackground />
       <div className="absolute inset-0 opacity-5">

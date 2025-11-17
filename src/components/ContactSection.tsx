@@ -44,6 +44,14 @@ Quero saber mais sobre o programa F3S TEAM!`;
 
   return (
     <section id="contact" className="section-padding bg-gradient-to-b from-primary to-primary/90 text-primary-foreground relative overflow-hidden">
+      {/* Golden top lighting */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-accent/20 via-accent/10 to-transparent pointer-events-none z-10" />
+      
+      {/* Animated golden circle */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="hero-animated-circle" style={{ top: '20em' }} />
+      </div>
+      
       {/* Background decoration */}
       <AnimatedBackground />
       <div className="absolute inset-0 opacity-10">
