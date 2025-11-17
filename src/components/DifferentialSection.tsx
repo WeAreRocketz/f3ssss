@@ -1,8 +1,11 @@
 import { Target, Users, TrendingUp, Award } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { useContent } from "@/hooks/useContent";
 
 const DifferentialSection = () => {
+  const { content } = useContent();
+  
   const differentials = [
     {
       icon: Target,
@@ -35,10 +38,10 @@ const DifferentialSection = () => {
           <ScrollReveal>
             <div className="text-center space-y-6 px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight max-w-4xl mx-auto">
-              Nós não só ensinamos marketing.
+              {content['differential.headline']}
             </h2>
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading text-gradient-gold max-w-4xl mx-auto">
-              Nós formamos o time da sua empresa.
+              {content['differential.subheadline']}
             </h3>
             
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed pt-4 px-4">

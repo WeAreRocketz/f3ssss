@@ -6,9 +6,11 @@ import { useToast } from "@/hooks/use-toast";
 import { Rocket, Send } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { useContent } from "@/hooks/useContent";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { content } = useContent();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -67,11 +69,11 @@ Quero saber mais sobre o programa F3S TEAM!`;
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
-              Quer ter um time que entende, executa e escala o seu negócio?
+              {content['contact.headline']}
             </h2>
             
             <p className="text-base sm:text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-              Agende um diagnóstico gratuito e descubra como aplicar o método F3S na sua empresa.
+              {content['contact.subheadline']}
             </p>
           </div>
           </ScrollReveal>
