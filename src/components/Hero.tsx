@@ -1,6 +1,7 @@
 import ShinyButton from "@/components/ShinyButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Rocket, Calendar } from "lucide-react";
+import f3sLogo from "@/assets/f3s-logo.png";
 
 const Hero = () => {
   return (
@@ -14,6 +15,11 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <img src={f3sLogo} alt="F3S Logo" className="h-16 md:h-20 w-auto" />
+          </div>
+          
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight px-4">
             Cansado de pagar agências e{" "}
