@@ -120,6 +120,15 @@ All colors MUST be HSL.
     opacity: 1;
     transform: translateY(0);
   }
+
+  .expertise-bar {
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  }
+
+  .reveal-visible .expertise-bar {
+    width: var(--bar-width);
+  }
 }
 
 @keyframes fadeInUp {
