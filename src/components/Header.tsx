@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { Menu, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ShinyButton from "@/components/ShinyButton";
 import f3sLogo from "@/assets/f3s-logo.png";
 
 const Header = () => {
@@ -59,12 +60,13 @@ const Header = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
               </button>
             ))}
-            <Button
+            <ShinyButton
               onClick={() => scrollToSection("contact")}
-              className="bg-accent hover:bg-accent/90 text-white"
+              size="default"
             >
+              <Calendar className="w-4 h-4" />
               Agendar Diagnóstico
-            </Button>
+            </ShinyButton>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -89,12 +91,14 @@ const Header = () => {
               </button>
             ))}
             <div className="px-4 pt-2">
-              <Button
+              <ShinyButton
                 onClick={() => scrollToSection("contact")}
-                className="w-full bg-accent hover:bg-accent/90 text-white"
+                size="default"
+                className="w-full"
               >
+                <Calendar className="w-4 h-4" />
                 Agendar Diagnóstico
-              </Button>
+              </ShinyButton>
             </div>
           </nav>
         )}
