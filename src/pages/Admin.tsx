@@ -291,7 +291,26 @@ const Admin = () => {
                   
                   return (
                     <div key={num} className="space-y-4 p-4 border rounded-lg mb-4 relative">
-                      <h4 className="font-semibold">Botão {num}</h4>
+                      <div className="flex justify-between items-center">
+                        <h4 className="font-semibold">Botão {num}</h4>
+                        <Button 
+                          size="sm" 
+                          variant="destructive"
+                          onClick={() => {
+                            if (confirm(`Tem certeza que deseja remover o Botão ${num}?`)) {
+                              updateContent(`bio.button${num}.text`, '');
+                              updateContent(`bio.button${num}.url`, '');
+                              toast({
+                                title: 'Botão removido!',
+                                description: `O botão ${num} foi removido com sucesso.`,
+                              });
+                              setTimeout(() => window.location.reload(), 500);
+                            }
+                          }}
+                        >
+                          Remover
+                        </Button>
+                      </div>
                       <ContentEditor 
                         contentKey={`bio.button${num}.text`} 
                         label="Texto do Botão" 
@@ -300,23 +319,6 @@ const Admin = () => {
                         contentKey={`bio.button${num}.url`} 
                         label="URL do Botão" 
                       />
-                      {num > 3 && (
-                        <Button 
-                          size="sm" 
-                          variant="destructive"
-                          onClick={() => {
-                            updateContent(`bio.button${num}.text`, '');
-                            updateContent(`bio.button${num}.url`, '');
-                            toast({
-                              title: 'Botão removido!',
-                              description: `O botão ${num} foi removido com sucesso.`,
-                            });
-                            setTimeout(() => window.location.reload(), 500);
-                          }}
-                        >
-                          Remover Botão
-                        </Button>
-                      )}
                     </div>
                   );
                 })}
