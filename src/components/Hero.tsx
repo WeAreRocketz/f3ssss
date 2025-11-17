@@ -2,35 +2,20 @@ import ShinyButton from "@/components/ShinyButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Rocket, Calendar } from "lucide-react";
 import f3sLogo from "@/assets/f3s-logo.png";
-import bgDeskVideo from "@/assets/bg-desk.mp4";
-import bgMobVideo from "@/assets/bg-mob.mp4";
 import { useContent } from "@/hooks/useContent";
 
 const Hero = () => {
   const { content } = useContent();
   
   return (
-    <section id="hero" className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-50 hidden md:block"
-        >
-          <source src={bgDeskVideo} type="video/mp4" />
-        </video>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-50 md:hidden"
-        >
-          <source src={bgMobVideo} type="video/mp4" />
-        </video>
+    <section id="hero" className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/30">
+      {/* Background decorative elements */}
+      <AnimatedBackground />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        {/* Animated golden circle */}
+        <div className="hero-animated-circle" />
       </div>
 
       <div className="container-custom relative z-10">
