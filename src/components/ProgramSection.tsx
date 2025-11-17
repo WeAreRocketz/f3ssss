@@ -1,6 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const ProgramSection = () => {
   const weeks = [
@@ -39,8 +40,9 @@ const ProgramSection = () => {
   ];
 
   return (
-    <section id="programa" className="section-padding bg-gradient-to-b from-background to-secondary/30">
-      <div className="container-custom">
+    <section id="programa" className="section-padding bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+      <AnimatedBackground />
+      <div className="container-custom relative z-10">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}
           <ScrollReveal>
@@ -101,9 +103,9 @@ const ProgramSection = () => {
           </div>
 
           <div className="text-center pt-8">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-base md:text-lg px-8 md:px-12 py-6 md:py-7 h-auto shadow-[0_0_30px_rgba(197,162,83,0.4)] hover:shadow-[0_0_45px_rgba(197,162,83,0.6)] transition-all">
+            <ShinyButton size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               💡 Quero Treinar Minha Equipe
-            </Button>
+            </ShinyButton>
           </div>
           </ScrollReveal>
         </div>

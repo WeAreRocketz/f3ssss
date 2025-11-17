@@ -1,6 +1,7 @@
 import { XCircle, TrendingDown, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const PainSection = () => {
   const painPoints = [
@@ -24,6 +25,7 @@ const PainSection = () => {
   return (
     <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background pattern */}
+      <AnimatedBackground />
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
@@ -65,12 +67,12 @@ const PainSection = () => {
           {/* CTAs with spacing */}
           <ScrollReveal delay={400}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white shadow-[0_0_25px_rgba(197,162,83,0.4)] hover:shadow-[0_0_35px_rgba(197,162,83,0.6)] transition-all">
+            <ShinyButton size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               🚀 Quero Treinar Minha Equipe
-            </Button>
-              <Button size="lg" variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            </ShinyButton>
+              <ShinyButton size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 📅 Agendar Diagnóstico Gratuito
-              </Button>
+              </ShinyButton>
             </div>
           </ScrollReveal>
 
