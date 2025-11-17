@@ -31,8 +31,8 @@ const Hero = () => {
           
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight px-4">
-            {content['hero.headline']?.split(' não ver resultado?')[0]}{" "}
-            <span className="text-gradient-gold">não ver resultado?</span>
+            {content['hero.headline']}{" "}
+            <span className="text-gradient-gold">{content['hero.headline.gold']}</span>
           </h1>
 
           {/* Subheadline */}
