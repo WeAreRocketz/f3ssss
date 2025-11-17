@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Rocket, Send } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -51,7 +52,8 @@ Quero saber mais sobre o programa F3S TEAM!`;
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto space-y-12">
           {/* Header */}
-          <div className="text-center space-y-6 animate-fade-in-up">
+          <ScrollReveal>
+          <div className="text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-sm font-semibold text-accent">
               <Rocket className="w-4 h-4" />
               Dê o Primeiro Passo
@@ -65,8 +67,10 @@ Quero saber mais sobre o programa F3S TEAM!`;
               Agende um diagnóstico gratuito e descubra como aplicar o método F3S na sua empresa.
             </p>
           </div>
+          </ScrollReveal>
 
           {/* Form */}
+          <ScrollReveal delay={200}>
           <div className="bg-card text-card-foreground rounded-3xl p-8 md:p-12 shadow-2xl border border-accent/20">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
@@ -135,8 +139,10 @@ Quero saber mais sobre o programa F3S TEAM!`;
               </p>
             </form>
           </div>
+          </ScrollReveal>
 
           {/* Trust elements */}
+          <ScrollReveal delay={400}>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm opacity-80">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-accent rounded-full" />
@@ -151,6 +157,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
               <span>Sem compromisso</span>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

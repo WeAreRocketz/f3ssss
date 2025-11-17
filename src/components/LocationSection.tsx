@@ -1,4 +1,5 @@
 import { MapPin, Building2, Users, Lightbulb } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const LocationSection = () => {
   const features = [
@@ -24,7 +25,8 @@ const LocationSection = () => {
       <div className="w-full">
         {/* Header */}
         <div className="container-custom">
-          <div className="text-center space-y-4 mb-12 animate-fade-in-up">
+          <ScrollReveal>
+          <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-5xl font-heading font-bold">
               Um ambiente feito para transformar{" "}
               <span className="text-gradient-gold">mentes em resultados</span>
@@ -33,9 +35,11 @@ const LocationSection = () => {
               Nossa sede em Itapema/SC é um espaço físico de aprendizado, estratégia e performance
             </p>
           </div>
+          </ScrollReveal>
         </div>
 
         {/* Location full width */}
+        <ScrollReveal delay={200}>
         <div className="w-full bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 border-y border-accent/20 shadow-[0_0_40px_rgba(197,162,83,0.2)]">
           <div className="container-custom py-16">
             <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -84,6 +88,7 @@ const LocationSection = () => {
             </div>
           </div>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );
