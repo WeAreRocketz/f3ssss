@@ -44,7 +44,7 @@ const PainSection = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight px-4">
                 {content['pain.headline']}
               </h2>
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading text-accent px-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading text-accent px-4 gold-shine">
                 {content['pain.subheadline']}
               </h3>
             </div>
@@ -67,7 +67,7 @@ const PainSection = () => {
                   className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_0_30px_rgba(197,162,83,0.2)] flex flex-col h-full"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <point.icon className="w-8 h-8 text-accent flex-shrink-0" />
+                    <point.icon className="w-8 h-8 text-accent flex-shrink-0 gold-shine" />
                     <h4 className="font-heading font-semibold text-lg">{point.title}</h4>
                   </div>
                   <p className="text-sm opacity-80 leading-relaxed">{point.description}</p>

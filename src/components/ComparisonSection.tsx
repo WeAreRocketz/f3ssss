@@ -62,7 +62,7 @@ const ComparisonSection = () => {
               <div className="relative bg-card/90 backdrop-blur border-2 border-accent/40 rounded-3xl p-8 md:p-10 space-y-6 shadow-2xl shadow-accent/20 h-full">
                 <div className="flex items-center gap-4 pb-6 border-b border-accent/20">
                   <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center shadow-[0_0_20px_rgba(197,162,83,0.3)]">
-                    <CheckCircle2 className="w-8 h-8 text-accent" />
+                    <CheckCircle2 className="w-8 h-8 text-accent gold-shine" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-heading font-bold text-gradient-gold">Modelo F3S</h3>
                 </div>

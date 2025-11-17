@@ -217,12 +217,39 @@ All colors MUST be HSL.
 }
 
 @keyframes hero-circle {
-  0%, 100% {
-    transform: translateX(50em) translateY(5em) scale(1.4);
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.3;
   }
   50% {
-    transform: translateX(0em) translateY(-5em) scale(1);
+    transform: translate(-50%, -50%) scale(1.1) rotate(180deg);
+    opacity: 0.5;
   }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes gold-shine {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 2px hsl(var(--accent)));
+  }
+  50% {
+    filter: brightness(1.3) drop-shadow(0 0 8px hsl(var(--accent)));
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 2px hsl(var(--accent)));
+  }
+}
+
+/* Gold shine effect for gold elements */
+.gold-shine {
+  animation: gold-shine 3s ease-in-out infinite;
+}
+
+.text-gradient-gold {
+  animation: gold-shine 3s ease-in-out infinite;
 }
 
 .hero-section {
@@ -252,90 +279,56 @@ All colors MUST be HSL.
 }
 
 .shiny-banner {
-  --shiny-cta-bg: hsl(var(--primary));
-  --shiny-cta-bg-subtle: hsl(var(--primary) / 0.9);
-  --shiny-cta-fg: hsl(var(--primary-foreground));
-  --shiny-cta-highlight: hsl(var(--accent));
-  --shiny-cta-highlight-subtle: white;
-  --animation: gradient-angle linear infinite;
-  --duration: 3s;
-  --shadow-size: 2px;
-  
-  isolation: isolate;
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  font-family: 'Degular', 'Montserrat', sans-serif;
-  line-height: 1.2;
-  border: 1px solid transparent;
-  color: var(--shiny-cta-fg);
-  background: 
-    linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg)) padding-box,
-    conic-gradient(
-      from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
-      transparent,
-      var(--shiny-cta-highlight) var(--gradient-percent),
-      var(--gradient-shine) calc(var(--gradient-percent) * 2),
-      var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
-      transparent calc(var(--gradient-percent) * 4)
-    ) border-box;
-  box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
-  transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
-  transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine;
+  background: linear-gradient(135deg, 
+    hsl(var(--accent) / 0.1) 0%,
+    hsl(var(--accent) / 0.05) 25%,
+    hsl(var(--accent) / 0.08) 50%,
+    hsl(var(--accent) / 0.05) 75%,
+    hsl(var(--accent) / 0.1) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-flow 8s ease infinite;
+  border: 1px solid hsl(var(--accent) / 0.3);
+  box-shadow: 
+    0 0 20px hsl(var(--accent) / 0.1),
+    inset 0 0 20px hsl(var(--accent) / 0.05);
 }
 
-.shiny-banner::before,
-.shiny-banner::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset-inline-start: 50%;
-  inset-block-start: 50%;
-  translate: -50% -50%;
-  z-index: -1;
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .shiny-banner::before {
-  --size: calc(100% - var(--shadow-size) * 3);
-  --position: 2px;
-  --space: calc(var(--position) * 2);
-  width: var(--size);
-  height: var(--size);
+  content: "";
+  position: absolute;
+  inset: 0;
   background: radial-gradient(
-      circle at var(--position) var(--position),
-      white calc(var(--position) / 4),
-      transparent 0
-    ) padding-box;
-  background-size: var(--space) var(--space);
-  background-repeat: space;
-  mask-image: conic-gradient(
-    from calc(var(--gradient-angle) + 45deg),
-    black,
-    transparent 10% 90%,
-    black
+    circle at 50% 50%,
+    hsl(var(--accent) / 0.15) 0%,
+    transparent 70%
   );
-  border-radius: inherit;
-  opacity: 0.4;
+  animation: pulse-glow 4s ease-in-out infinite;
+  z-index: 0;
 }
 
-.shiny-banner::after {
-  --animation: shimmer linear infinite;
-  width: 100%;
-  aspect-ratio: 1;
-  background: linear-gradient(
-    -50deg,
-    transparent,
-    var(--shiny-cta-highlight),
-    transparent
-  );
-  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
-  opacity: 0.6;
-}
-
-.shiny-banner,
-.shiny-banner::before,
-.shiny-banner::after {
-  animation: var(--animation) var(--duration),
-    var(--animation) calc(var(--duration) / 0.4) reverse;
-  animation-composition: add;
-  animation-play-state: running;
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
 }

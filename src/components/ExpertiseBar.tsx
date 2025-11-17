@@ -38,11 +38,11 @@ const ExpertiseBar = ({ skill, level, delay = 0 }: ExpertiseBarProps) => {
         <span className="font-semibold text-sm uppercase tracking-wide">
           {skill}
         </span>
-        <span className="text-accent font-bold text-sm">{level}%</span>
+        <span className="text-accent font-bold text-sm gold-shine">{level}%</span>
       </div>
       <div className="h-2 bg-secondary rounded-full overflow-hidden">
         <div 
-          className="h-full bg-gradient-to-r from-accent to-accent/80 rounded-full transition-all duration-1000 ease-out"
+          className="h-full bg-gradient-to-r from-accent to-accent/80 rounded-full transition-all duration-1000 ease-out gold-shine"
           style={{ 
             width: isVisible ? `${level}%` : '0%',
             transitionDelay: '0.2s'

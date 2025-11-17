@@ -53,7 +53,7 @@ const ProgramSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
               {content['program.headline']}
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-accent font-semibold">
+            <p className="text-lg sm:text-xl md:text-2xl text-accent font-semibold gold-shine">
               {content['program.subheadline']}
             </p>
           </div>
@@ -68,7 +68,7 @@ const ProgramSection = () => {
               >
                 <div className="flex items-center gap-4 mb-6 pb-4 border-b border-border/50">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(197,162,83,0.3)] group-hover:shadow-[0_0_30px_rgba(197,162,83,0.5)] transition-all">
-                    <span className="text-2xl md:text-3xl font-heading font-bold text-accent">{week.number}</span>
+                    <span className="text-2xl md:text-3xl font-heading font-bold text-accent gold-shine">{week.number}</span>
                   </div>
                   <h3 className="text-xl md:text-2xl font-heading font-bold leading-tight flex-1">{week.title}</h3>
                 </div>
@@ -76,7 +76,7 @@ const ProgramSection = () => {
                 <ul className="grid md:grid-cols-2 gap-4">
                   {week.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 p-4 rounded-xl bg-secondary/30 hover:bg-accent/5 transition-all">
-                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5 gold-shine" />
                       <span className="text-muted-foreground leading-relaxed">{item}</span>
                     </li>
                   ))}

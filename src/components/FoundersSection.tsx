@@ -56,10 +56,10 @@ const FoundersSection = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <ScrollReveal>
-            <p className="text-accent font-semibold text-sm uppercase tracking-wider px-4">Palavra dos Fundadores</p>
+            <p className="text-accent font-semibold text-sm uppercase tracking-wider px-4 gold-shine">Palavra dos Fundadores</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight px-4">
               {content['founders.headline']?.split('o campo de batalha')[0]}{" "}
-              <span className="text-gradient-gold">o campo de batalha</span>{" "}
+              <span className="text-gradient-gold gold-shine">o campo de batalha</span>{" "}
               do digital
             </h2>
             </ScrollReveal>

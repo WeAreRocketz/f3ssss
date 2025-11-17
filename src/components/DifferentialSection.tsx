@@ -55,7 +55,7 @@ const DifferentialSection = () => {
           <ScrollReveal delay={200}>
           <div className="bg-card rounded-3xl p-8 md:p-12 shadow-xl border border-border">
             <p className="text-base sm:text-lg md:text-xl text-center leading-relaxed mb-8 px-4">
-              Nosso método combina <strong className="text-accent">estratégia, execução e acompanhamento</strong>, 
+              Nosso método combina <strong className="text-accent gold-shine">estratégia, execução e acompanhamento</strong>, 
               mostrando passo a passo como estruturar o seu próprio departamento de marketing interno.
             </p>
 
@@ -67,7 +67,7 @@ const DifferentialSection = () => {
                   className="flex flex-col items-center text-center gap-4 p-8 rounded-2xl bg-gradient-to-b from-secondary/80 to-secondary/40 hover:from-accent/10 hover:to-accent/5 border border-border hover:border-accent/30 transition-all duration-300 hover-lift shadow-lg hover:shadow-[0_0_30px_rgba(197,162,83,0.2)]"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shadow-[0_0_20px_rgba(197,162,83,0.2)]">
+                    <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shadow-[0_0_20px_rgba(197,162,83,0.2)] gold-shine">
                       <item.icon className="w-8 h-8 text-accent" />
                     </div>
                   </div>
@@ -86,7 +86,7 @@ const DifferentialSection = () => {
           <ScrollReveal delay={400}>
           <div className="text-center">
             <div className="inline-block bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 rounded-2xl p-8 md:p-12 border border-accent/20">
-              <p className="text-2xl md:text-4xl font-heading font-bold text-accent leading-tight">
+              <p className="text-2xl md:text-4xl font-heading font-bold text-accent gold-shine leading-tight">
                 "Em vez de terceirizar, construa sua própria máquina de vendas."
               </p>
             </div>
