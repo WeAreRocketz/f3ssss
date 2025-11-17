@@ -1,11 +1,21 @@
-import { Trophy, Palette } from "lucide-react";
+import { Palette } from "lucide-react";
+import aristonPhoto from "@/assets/ariston.webp";
+
+interface Founder {
+  name: string;
+  role: string;
+  photo?: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  description: string;
+  color: string;
+}
 
 const FoundersSection = () => {
-  const founders = [
+  const founders: Founder[] = [
     {
       name: "Ariston Ferraz",
       role: "Estratégia e Vendas Online",
-      icon: Trophy,
+      photo: aristonPhoto,
       description: "Empresário e especialista em vendas digitais com mais de R$10 milhões faturados online, criador de ecossistemas de e-commerce. Domina as estratégias que comandam o mundo online e também técnicas de vendas presenciais usando a tecnologia ao favor do time comercial, cadência comercial e gestão de vendas através de processos implementados a um CRM de vendas.",
       color: "accent"
     },
@@ -19,7 +29,7 @@ const FoundersSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-secondary/50">
+    <section id="fundadores" className="section-padding bg-secondary/50">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}
@@ -41,10 +51,12 @@ const FoundersSection = () => {
                 key={index}
                 className="bg-card rounded-3xl p-8 shadow-xl border border-border hover:border-accent/30 transition-all duration-300 hover-lift space-y-6 hover:shadow-[0_0_40px_rgba(197,162,83,0.15)]"
               >
-                {/* Photo placeholder - você pode substituir por imagens reais */}
                 <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent/20 to-accent/5 border-4 border-accent/20 flex items-center justify-center overflow-hidden shadow-[0_0_25px_rgba(197,162,83,0.3)]">
-                  <founder.icon className="w-16 h-16 text-accent" />
-                  {/* Substitua por: <img src="/path/to/founder-photo.jpg" alt={founder.name} className="w-full h-full object-cover" /> */}
+                  {founder.photo ? (
+                    <img src={founder.photo} alt={founder.name} className="w-full h-full object-cover" />
+                  ) : founder.icon ? (
+                    <founder.icon className="w-16 h-16 text-accent" />
+                  ) : null}
                 </div>
                 
                 <div className="text-center">

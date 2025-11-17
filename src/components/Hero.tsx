@@ -3,7 +3,7 @@ import { ArrowRight, Rocket } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/30">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/30">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" />
@@ -12,15 +12,6 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
-          {/* Badge - Full Width Bar */}
-          <div className="w-full mb-8 animate-fade-in -mx-4 sm:mx-0">
-            <div className="bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border-y border-accent/30 px-6 py-4 shadow-[0_0_20px_rgba(197,162,83,0.3)]">
-              <p className="text-accent text-sm md:text-base font-semibold text-center">
-                ✨ Forme o time da sua própria agência interna
-              </p>
-            </div>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
             Cansado de pagar agências e{" "}

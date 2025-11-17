@@ -31,7 +31,7 @@ const ComparisonSection = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-destructive/20 to-destructive/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all"></div>
-              <div className="relative bg-card/90 backdrop-blur border-2 border-destructive/30 rounded-3xl p-8 md:p-10 space-y-6 shadow-2xl">
+              <div className="relative bg-card/90 backdrop-blur border-2 border-destructive/30 rounded-3xl p-8 md:p-10 space-y-6 shadow-2xl h-full">
                 <div className="flex items-center gap-4 pb-6 border-b border-destructive/20">
                   <div className="w-14 h-14 rounded-2xl bg-destructive/10 flex items-center justify-center">
                     <X className="w-8 h-8 text-destructive" />
@@ -51,10 +51,7 @@ const ComparisonSection = () => {
 
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-accent/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all"></div>
-              <div className="relative bg-card/90 backdrop-blur border-2 border-accent/40 rounded-3xl p-8 md:p-10 space-y-6 shadow-2xl shadow-accent/20">
-                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-accent to-accent/80 text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-lg shadow-accent/30 animate-pulse">
-                  ✨ Recomendado
-                </div>
+              <div className="relative bg-card/90 backdrop-blur border-2 border-accent/40 rounded-3xl p-8 md:p-10 space-y-6 shadow-2xl shadow-accent/20 h-full">
                 <div className="flex items-center gap-4 pb-6 border-b border-accent/20">
                   <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center shadow-[0_0_20px_rgba(197,162,83,0.3)]">
                     <CheckCircle2 className="w-8 h-8 text-accent" />

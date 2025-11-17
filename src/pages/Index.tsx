@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PainSection from "@/components/PainSection";
 import DifferentialSection from "@/components/DifferentialSection";
@@ -7,18 +8,49 @@ import ProgramSection from "@/components/ProgramSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import GoldLight from "@/components/GoldLight";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <Header />
       <Hero />
-      <PainSection />
-      <DifferentialSection />
-      <FoundersSection />
-      <LocationSection />
-      <ProgramSection />
-      <ComparisonSection />
-      <ContactSection />
+      
+      <ScrollReveal>
+        <PainSection />
+      </ScrollReveal>
+      
+      <div className="relative">
+        <GoldLight />
+        <ScrollReveal>
+          <DifferentialSection />
+        </ScrollReveal>
+      </div>
+      
+      <ScrollReveal>
+        <FoundersSection />
+      </ScrollReveal>
+      
+      <ScrollReveal>
+        <LocationSection />
+      </ScrollReveal>
+      
+      <div className="relative">
+        <GoldLight />
+        <ScrollReveal>
+          <ProgramSection />
+        </ScrollReveal>
+      </div>
+      
+      <ScrollReveal>
+        <ComparisonSection />
+      </ScrollReveal>
+      
+      <ScrollReveal>
+        <ContactSection />
+      </ScrollReveal>
+      
       <Footer />
     </main>
   );

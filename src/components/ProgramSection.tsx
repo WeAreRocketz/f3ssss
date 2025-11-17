@@ -38,7 +38,7 @@ const ProgramSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-secondary/30">
+    <section id="programa" className="section-padding bg-gradient-to-b from-background to-secondary/30">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}
