@@ -22,7 +22,11 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <img src={f3sLogo} alt="F3S Logo" className="h-16 md:h-20 w-auto" />
+            <img 
+              src={content['image.logo'] || f3sLogo} 
+              alt="F3S Logo" 
+              className="h-16 md:h-20 w-auto" 
+            />
           </div>
           
           {/* Main Headline */}

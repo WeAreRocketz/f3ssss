@@ -21,7 +21,7 @@ const FoundersSection = () => {
     {
       name: content['founders.ariston.name'] || "Ariston Ferraz",
       role: content['founders.ariston.role'] || "Estratégia e Vendas Online",
-      photo: aristonPhoto,
+      photo: content['image.ariston'] || aristonPhoto,
       description: content['founders.ariston.description'] || "Empresário e especialista em vendas digitais com mais de R$10 milhões faturados online, criador de ecossistemas de e-commerce. Domina as estratégias que comandam o mundo online e também técnicas de vendas presenciais usando a tecnologia ao favor do time comercial.",
       expertise: [
         { skill: "Estratégia Digital", level: 100 },
