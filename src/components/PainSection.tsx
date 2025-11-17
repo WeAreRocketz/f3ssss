@@ -1,4 +1,4 @@
-import { XCircle, TrendingDown, Clock } from "lucide-react";
+import { XCircle, TrendingDown, Clock, Rocket, Calendar } from "lucide-react";
 import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -38,10 +38,10 @@ const PainSection = () => {
           {/* Header */}
           <ScrollReveal>
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight px-4">
                 Você não precisa de mais uma agência.
               </h2>
-              <h3 className="text-2xl md:text-4xl font-heading text-accent">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading text-accent px-4">
                 Precisa de um time que saiba o que faz.
               </h3>
             </div>
@@ -49,7 +49,7 @@ const PainSection = () => {
 
           {/* Content */}
           <ScrollReveal delay={200}>
-            <div className="space-y-6 text-lg md:text-xl leading-relaxed opacity-90">
+            <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed opacity-90 px-4">
             <p>
               Você já percebeu que o problema não é o marketing — é a <strong>falta de pessoas preparadas</strong>.
             </p>
@@ -58,7 +58,7 @@ const PainSection = () => {
               O resultado? <strong className="text-accent">Você paga caro e continua sem previsibilidade.</strong>
             </p>
             
-              <p className="text-2xl md:text-3xl font-heading font-bold text-accent pt-6 text-center">
+              <p className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-accent pt-6 text-center">
                 A F3S nasceu pra mudar isso.
               </p>
             </div>
@@ -66,12 +66,14 @@ const PainSection = () => {
 
           {/* CTAs with spacing */}
           <ScrollReveal delay={400}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 px-4">
             <ShinyButton size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              🚀 Quero Treinar Minha Equipe
+              <Rocket className="w-5 h-5" />
+              Quero Treinar Minha Equipe
             </ShinyButton>
               <ShinyButton size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                📅 Agendar Diagnóstico Gratuito
+                <Calendar className="w-5 h-5" />
+                Agendar Diagnóstico Gratuito
               </ShinyButton>
             </div>
           </ScrollReveal>

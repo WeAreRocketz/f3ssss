@@ -1,4 +1,5 @@
 import { MapPin, Mail, Phone } from "lucide-react";
+import f3sLogo from "@/assets/f3s-logo.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-heading font-bold text-accent">F3S</h3>
+            <img src={f3sLogo} alt="F3S Logo" className="h-16 w-auto" />
             <p className="text-sm opacity-80 leading-relaxed">
               Escola presencial de estratégia digital que forma equipes de alta performance 
               em marketing e vendas.
