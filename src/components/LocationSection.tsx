@@ -1,6 +1,5 @@
 import { MapPin, Building2, Users, Lightbulb } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import officePhoto from "@/assets/f3s-office.webp";
 import { useContent } from "@/hooks/useContent";
 
@@ -26,7 +25,6 @@ const LocationSection = () => {
 
   return (
     <section className="section-padding bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
-      <AnimatedBackground />
       <div className="w-full relative z-10">
         {/* Header */}
         <div className="container-custom">
