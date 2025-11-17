@@ -2,8 +2,10 @@ import { MapPin, Building2, Users, Lightbulb } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import officePhoto from "@/assets/f3s-office.webp";
+import { useContent } from "@/hooks/useContent";
 
 const LocationSection = () => {
+  const { content } = useContent();
   const features = [
     {
       icon: Building2,
@@ -31,11 +33,11 @@ const LocationSection = () => {
           <ScrollReveal>
           <div className="text-center space-y-4 mb-12 px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
-              Um ambiente feito para transformar{" "}
+              {content['location.headline']?.split('mentes em resultados')[0]}{" "}
               <span className="text-gradient-gold">mentes em resultados</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Nossa sede em Itapema/SC é um espaço físico de aprendizado, estratégia e performance
+              {content['location.subheadline']}
             </p>
           </div>
           </ScrollReveal>
@@ -51,8 +53,8 @@ const LocationSection = () => {
                   <div className="flex items-center gap-4">
                     <MapPin className="w-8 h-8 text-accent flex-shrink-0" />
                     <div>
-                      <p className="font-heading font-bold text-2xl md:text-3xl text-gradient-gold">Itapema, Santa Catarina</p>
-                      <p className="text-base text-muted-foreground mt-1">120m² de puro conhecimento</p>
+                      <p className="font-heading font-bold text-2xl md:text-3xl text-gradient-gold">{content['location.city']}</p>
+                      <p className="text-base text-muted-foreground mt-1">{content['location.subtitle']}</p>
                     </div>
                   </div>
                 </div>

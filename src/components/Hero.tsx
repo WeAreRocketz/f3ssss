@@ -2,8 +2,11 @@ import ShinyButton from "@/components/ShinyButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Rocket, Calendar } from "lucide-react";
 import f3sLogo from "@/assets/f3s-logo.png";
+import { useContent } from "@/hooks/useContent";
 
 const Hero = () => {
+  const { content } = useContent();
+  
   return (
     <section id="hero" className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/30">
       {/* Background decorative elements */}
@@ -24,18 +27,17 @@ const Hero = () => {
           
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight px-4">
-            Cansado de pagar agências e{" "}
+            {content['hero.headline']?.split(' não ver resultado?')[0]}{" "}
             <span className="text-gradient-gold">não ver resultado?</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-            Treine o seu próprio time e assuma o controle do seu marketing.
+            {content['hero.subheadline']}
           </p>
 
           <p className="text-base md:text-lg text-foreground/80 max-w-3xl mx-auto px-4">
-            A F3S é a escola presencial que forma equipes de alta performance em marketing e vendas — 
-            ensinando estratégia, tráfego, funil e posicionamento aplicados à sua empresa.
+            {content['hero.description']}
           </p>
 
           {/* CTAs */}

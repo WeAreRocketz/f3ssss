@@ -2,8 +2,11 @@ import { XCircle, TrendingDown, Clock, Rocket, Calendar } from "lucide-react";
 import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { useContent } from "@/hooks/useContent";
 
 const PainSection = () => {
+  const { content } = useContent();
+  
   const painPoints = [
     {
       icon: XCircle,
@@ -39,10 +42,10 @@ const PainSection = () => {
           <ScrollReveal>
             <div className="text-center space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight px-4">
-                Você não precisa de mais uma agência.
+                {content['pain.headline']}
               </h2>
               <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-heading text-accent px-4">
-                Precisa de um time que saiba o que faz.
+                {content['pain.subheadline']}
               </h3>
             </div>
           </ScrollReveal>
@@ -50,13 +53,9 @@ const PainSection = () => {
           {/* Content - Centered paragraphs */}
           <ScrollReveal delay={200}>
             <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed opacity-90 px-4 text-center max-w-3xl mx-auto">
-              <p>
-                Você já percebeu que o problema não é o marketing — é a <strong>falta de pessoas preparadas</strong>.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: content['pain.text1'].replace('falta de pessoas preparadas', '<strong>falta de pessoas preparadas</strong>') }} />
               
-              <p>
-                O resultado? <strong className="text-accent">Você paga caro e continua sem previsibilidade.</strong>
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: content['pain.text2'].replace(content['pain.text2'].match(/Você paga caro e continua sem previsibilidade\./)?.[0] || '', '<strong className="text-accent">Você paga caro e continua sem previsibilidade.</strong>') }} />
             </div>
           </ScrollReveal>
 
@@ -81,7 +80,7 @@ const PainSection = () => {
           <ScrollReveal delay={600}>
             <div className="text-center pt-8">
               <p className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-accent">
-                A F3S nasceu pra mudar isso.
+                {content['pain.mission']}
               </p>
             </div>
           </ScrollReveal>

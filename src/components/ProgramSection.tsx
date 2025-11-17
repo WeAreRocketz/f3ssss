@@ -2,8 +2,11 @@ import { CheckCircle2, Lightbulb } from "lucide-react";
 import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { useContent } from "@/hooks/useContent";
 
 const ProgramSection = () => {
+  const { content } = useContent();
+  
   const weeks = [
     {
       number: "1",
@@ -48,11 +51,10 @@ const ProgramSection = () => {
           <ScrollReveal>
           <div className="text-center space-y-4 px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
-              F3S TEAM — Formação Presencial de{" "}
-              <span className="text-gradient-gold">Times de Performance</span>
+              {content['program.headline']}
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              O programa que ensina a sua equipe tudo que uma agência não mostra
+            <p className="text-lg sm:text-xl md:text-2xl text-accent font-semibold">
+              {content['program.subheadline']}
             </p>
           </div>
           </ScrollReveal>
