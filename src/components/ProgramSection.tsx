@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const ProgramSection = () => {
   const weeks = [
@@ -42,7 +43,8 @@ const ProgramSection = () => {
       <div className="container-custom">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}
-          <div className="text-center space-y-4 animate-fade-in-up">
+          <ScrollReveal>
+          <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
               F3S TEAM — Formação Presencial de{" "}
               <span className="text-gradient-gold">Times de Performance</span>
@@ -51,12 +53,13 @@ const ProgramSection = () => {
               O programa que ensina a sua equipe tudo o que uma agência não mostra
             </p>
           </div>
+          </ScrollReveal>
 
           {/* Weeks - Novo layout */}
           <div className="space-y-6">
             {weeks.map((week, index) => (
+              <ScrollReveal key={index} delay={index * 150}>
               <div 
-                key={index}
                 className="bg-gradient-to-r from-card to-card/80 rounded-3xl p-6 md:p-8 shadow-xl border border-border hover:border-accent/40 transition-all duration-300 hover:shadow-[0_0_40px_rgba(197,162,83,0.25)] group"
               >
                 <div className="flex items-center gap-4 mb-6 pb-4 border-b border-border/50">
@@ -75,16 +78,20 @@ const ProgramSection = () => {
                   ))}
                 </ul>
               </div>
+              </ScrollReveal>
             ))}
           </div>
 
+          <ScrollReveal delay={600}>
           <div className="text-center bg-accent/10 border-2 border-accent/30 rounded-3xl p-8 shadow-lg">
             <p className="text-lg md:text-xl font-semibold">
               Nosso treinamento não será apenas teórico mas focado no que dará resultado para sua empresa 
               que é o <span className="text-accent">acompanhamento prático</span>.
             </p>
           </div>
+          </ScrollReveal>
 
+          <ScrollReveal delay={800}>
           <div className="text-center">
             <div className="inline-block bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 rounded-2xl p-8 md:p-12 border border-accent/20 shadow-[0_0_40px_rgba(197,162,83,0.2)]">
               <p className="text-2xl md:text-4xl font-heading font-bold text-accent leading-tight">
@@ -98,6 +105,7 @@ const ProgramSection = () => {
               💡 Quero Treinar Minha Equipe
             </Button>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

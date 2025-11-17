@@ -1,4 +1,5 @@
 import { X, CheckCircle2 } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const ComparisonSection = () => {
   const oldModel = [
@@ -21,14 +22,17 @@ const ComparisonSection = () => {
     <section className="section-padding bg-gradient-to-b from-secondary/30 to-background">
       <div className="container-custom">
         <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4 animate-fade-in-up">
+          <ScrollReveal>
+          <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
               Você não precisa{" "}
               <span className="text-gradient-gold">terceirizar o coração do seu negócio</span>
             </h2>
           </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8">
+            <ScrollReveal delay={200}>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-destructive/20 to-destructive/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all"></div>
               <div className="relative bg-card/90 backdrop-blur border-2 border-destructive/30 rounded-3xl p-8 md:p-10 space-y-6 shadow-2xl h-full">
@@ -48,7 +52,9 @@ const ComparisonSection = () => {
                 </ul>
               </div>
             </div>
+            </ScrollReveal>
 
+            <ScrollReveal delay={400}>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-accent/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all"></div>
               <div className="relative bg-card/90 backdrop-blur border-2 border-accent/40 rounded-3xl p-8 md:p-10 space-y-6 shadow-2xl shadow-accent/20 h-full">
@@ -68,6 +74,7 @@ const ComparisonSection = () => {
                 </ul>
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>
