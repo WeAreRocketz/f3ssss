@@ -39,9 +39,10 @@ const Hero = () => {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 px-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center pt-4 px-4">
             <ShinyButton
               size="lg"
+              className="w-full sm:w-auto"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Rocket className="w-5 h-5" />
@@ -51,6 +52,7 @@ const Hero = () => {
             <ShinyButton
               size="lg"
               variant="outline"
+              className="w-full sm:w-auto"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Calendar className="w-5 h-5" />
@@ -59,16 +61,16 @@ const Hero = () => {
           </div>
 
           {/* Trust indicators */}
-          <div className="pt-8 flex flex-col sm:flex-row gap-8 justify-center items-center text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
+          <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
               <div className="w-2 h-2 bg-accent rounded-full" />
               <span>Presencial em Itapema/SC</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
               <div className="w-2 h-2 bg-accent rounded-full" />
               <span>Formação Completa em 4 Semanas</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
               <div className="w-2 h-2 bg-accent rounded-full" />
               <span>Time Estratégico e Operacional</span>
             </div>

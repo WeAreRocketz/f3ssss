@@ -1,6 +1,7 @@
 import { MapPin, Building2, Users, Lightbulb } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import officePhoto from "@/assets/f3s-office.webp";
 
 const LocationSection = () => {
   const features = [
@@ -81,11 +82,13 @@ const LocationSection = () => {
                 </div>
               </div>
 
-              <div className="relative h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-accent/20 to-primary/10 flex items-center justify-center shadow-2xl border border-accent/20">
-                <Building2 className="w-40 h-40 text-accent/30" />
-                <p className="absolute bottom-6 text-sm text-muted-foreground bg-card/80 backdrop-blur px-4 py-2 rounded-full">
-                  [Imagem do escritório aqui]
-                </p>
+              <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-accent/20">
+                <img 
+                  src={officePhoto} 
+                  alt="F3S Office - Escritório em Itapema/SC" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/10 to-transparent" />
               </div>
             </div>
           </div>
