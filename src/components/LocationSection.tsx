@@ -82,7 +82,7 @@ const LocationSection = () => {
                 </div>
               </div>
 
-              <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-accent/20">
+              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-accent/20">
                 <img 
                   src={officePhoto} 
                   alt="F3S Office - Escritório em Itapema/SC" 
