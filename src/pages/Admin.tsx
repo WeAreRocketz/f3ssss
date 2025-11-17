@@ -370,6 +370,15 @@ const Admin = () => {
               
               <div className="border-t pt-6">
                 <ImageUploader
+                  label="Foto do Gilvane Soares"
+                  contentKey="image.gilvane"
+                  currentImage={content['image.gilvane']}
+                  onImageChange={updateContent}
+                />
+              </div>
+              
+              <div className="border-t pt-6">
+                <ImageUploader
                   label="Foto do Escritório"
                   contentKey="image.office"
                   currentImage={content['image.office']}

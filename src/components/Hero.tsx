@@ -62,15 +62,15 @@ const Hero = () => {
           {/* Trust indicators */}
           <div className="pt-8 flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center text-xs sm:text-sm text-muted-foreground px-4">
             <div className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto whitespace-nowrap">
-              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine" />
+              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine-light" />
               <span className="text-center">Presencial em Itapema/SC</span>
             </div>
             <div className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto whitespace-nowrap">
-              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine" />
+              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine-light" />
               <span className="text-center">Formação em 4 Semanas</span>
             </div>
             <div className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-full sm:w-auto whitespace-nowrap">
-              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine" />
+              <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 gold-shine-light" />
               <span className="text-center">Time Estratégico</span>
             </div>
           </div>
