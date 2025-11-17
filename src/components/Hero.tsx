@@ -17,7 +17,7 @@ const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
       >
         <source src={bgDeskVideo} type="video/mp4" />
       </video>
@@ -26,13 +26,13 @@ const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover md:hidden"
+        className="absolute inset-0 w-full h-full object-cover z-0 md:hidden"
       >
         <source src={bgMobVideo} type="video/mp4" />
       </video>
       
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/60" />
+      <div className="absolute inset-0 bg-background/60 z-[1]" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
