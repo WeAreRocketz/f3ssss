@@ -2,6 +2,7 @@ import aristonPhoto from "@/assets/ariston.webp";
 import ExpertiseBar from "@/components/ExpertiseBar";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import ShinyBanner from "@/components/ShinyBanner";
 
 interface Founder {
   name: string;
@@ -140,12 +141,12 @@ const FoundersSection = () => {
           {/* Authority statement */}
           <ScrollReveal delay={400}>
           <div className="text-center pt-12">
-            <div className="w-full max-w-5xl mx-auto bg-gradient-to-r from-primary via-primary/95 to-primary text-primary-foreground rounded-2xl px-8 py-8 md:px-12 md:py-10 shadow-xl">
-              <p className="text-lg sm:text-xl md:text-2xl font-heading font-semibold leading-relaxed px-4">
+            <ShinyBanner className="max-w-5xl mx-auto shadow-xl">
+              <p className="text-lg sm:text-xl md:text-2xl font-heading font-semibold leading-relaxed">
                 "A F3S nasceu da prática. De quem construiu, testou e escalou empresas reais — 
                 e agora ensina times a fazer o mesmo."
               </p>
-            </div>
+            </ShinyBanner>
           </div>
           </ScrollReveal>
         </div>
