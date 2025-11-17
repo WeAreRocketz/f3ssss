@@ -47,25 +47,47 @@ const PainSection = () => {
             </div>
           </ScrollReveal>
 
-          {/* Content */}
+          {/* Content - Centered paragraphs */}
           <ScrollReveal delay={200}>
-            <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed opacity-90 px-4">
-            <p>
-              Você já percebeu que o problema não é o marketing — é a <strong>falta de pessoas preparadas</strong>.
-            </p>
-            
-            <p>
-              O resultado? <strong className="text-accent">Você paga caro e continua sem previsibilidade.</strong>
-            </p>
-            
-              <p className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-accent pt-6 text-center">
+            <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed opacity-90 px-4 text-center max-w-3xl mx-auto">
+              <p>
+                Você já percebeu que o problema não é o marketing — é a <strong>falta de pessoas preparadas</strong>.
+              </p>
+              
+              <p>
+                O resultado? <strong className="text-accent">Você paga caro e continua sem previsibilidade.</strong>
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Pain points grid - Moved before F3S headline */}
+          <div className="grid md:grid-cols-3 gap-6 pt-8">
+            {painPoints.map((point, index) => (
+              <ScrollReveal key={index} delay={300 + index * 100}>
+                <div 
+                  className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_0_30px_rgba(197,162,83,0.2)] flex flex-col h-full"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <point.icon className="w-8 h-8 text-accent flex-shrink-0" />
+                    <h4 className="font-heading font-semibold text-lg">{point.title}</h4>
+                  </div>
+                  <p className="text-sm opacity-80 leading-relaxed">{point.description}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* F3S Mission Statement */}
+          <ScrollReveal delay={600}>
+            <div className="text-center pt-8">
+              <p className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-accent">
                 A F3S nasceu pra mudar isso.
               </p>
             </div>
           </ScrollReveal>
 
           {/* CTAs with spacing */}
-          <ScrollReveal delay={400}>
+          <ScrollReveal delay={700}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 px-4">
             <ShinyButton size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               <Rocket className="w-5 h-5" />
@@ -102,20 +124,6 @@ const PainSection = () => {
             </ScrollReveal>
           </div>
 
-          {/* Pain points grid */}
-          <div className="grid md:grid-cols-3 gap-6 pt-12">
-            {painPoints.map((point, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-              <div 
-                className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_0_30px_rgba(197,162,83,0.2)]"
-              >
-                <point.icon className="w-10 h-10 mb-4 text-accent" />
-                <h4 className="font-heading font-semibold text-xl mb-2">{point.title}</h4>
-                <p className="text-sm opacity-80">{point.description}</p>
-              </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </div>
     </section>
