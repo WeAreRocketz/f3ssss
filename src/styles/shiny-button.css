@@ -230,6 +230,7 @@
   --gradient-percent: 20%;
   --gradient-angle-offset: 95deg;
   --gradient-shine: var(--shiny-cta-highlight-subtle);
+  color: var(--shiny-cta-fg);
 }
 
 .shiny-button-outline:hover span::before {
