@@ -20,21 +20,27 @@ const Bio = () => {
     <div className="min-h-screen bg-[#131313] relative overflow-hidden flex items-center justify-center p-6">
       <TrackingScripts />
       
-      {/* Animated background light effect */}
+      {/* Animated background light effect - STRONGER */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float-slower" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/30 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-1/3 right-1/4 w-[450px] h-[450px] bg-accent/25 rounded-full blur-3xl animate-float-slower" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl animate-float-slow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-[60%] right-[15%] w-[400px] h-[400px] bg-accent/15 rounded-full blur-3xl animate-float-slower" style={{ animationDelay: '2s' }} />
       </div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-md mx-auto flex flex-col items-center gap-8">
         {/* Logo */}
-        {content['bio.logo'] && (
+        {content['bio.logo'] ? (
           <img 
             src={content['bio.logo']} 
             alt="Logo" 
             className="w-48 h-auto object-contain"
           />
+        ) : (
+          <div className="w-48 h-24 flex items-center justify-center text-muted-foreground text-sm text-center">
+            Configure a logo no Admin
+          </div>
         )}
 
         {/* Buttons */}
