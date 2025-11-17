@@ -51,12 +51,14 @@ const FoundersSection = () => {
         <div className="max-w-7xl mx-auto space-y-20">
           {/* Header */}
           <div className="text-center space-y-4">
-            <p className="text-accent font-semibold text-sm uppercase tracking-wider">Palavra dos Fundadores</p>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
+            <ScrollReveal>
+            <p className="text-accent font-semibold text-sm uppercase tracking-wider px-4">Palavra dos Fundadores</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight px-4">
               Criada por quem viveu{" "}
               <span className="text-gradient-gold">o campo de batalha</span>{" "}
               do digital
             </h2>
+            </ScrollReveal>
           </div>
 
           {/* Founders - Large Layout */}
@@ -136,14 +138,16 @@ const FoundersSection = () => {
           </div>
 
           {/* Authority statement */}
+          <ScrollReveal delay={400}>
           <div className="text-center pt-12">
-            <div className="inline-block bg-gradient-to-r from-primary via-primary/95 to-primary text-primary-foreground rounded-2xl px-8 py-6 md:px-12 md:py-8 max-w-3xl shadow-xl">
-              <p className="text-xl md:text-2xl font-heading font-semibold leading-relaxed">
+            <div className="w-full max-w-5xl mx-auto bg-gradient-to-r from-primary via-primary/95 to-primary text-primary-foreground rounded-2xl px-8 py-8 md:px-12 md:py-10 shadow-xl">
+              <p className="text-lg sm:text-xl md:text-2xl font-heading font-semibold leading-relaxed px-4">
                 "A F3S nasceu da prática. De quem construiu, testou e escalou empresas reais — 
                 e agora ensina times a fazer o mesmo."
               </p>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

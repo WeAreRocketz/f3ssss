@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Lightbulb } from "lucide-react";
 import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -46,13 +46,13 @@ const ProgramSection = () => {
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}
           <ScrollReveal>
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
+          <div className="text-center space-y-4 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
               F3S TEAM — Formação Presencial de{" "}
               <span className="text-gradient-gold">Times de Performance</span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              O programa que ensina a sua equipe tudo o que uma agência não mostra
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              O programa que ensina a sua equipe tudo que uma agência não mostra
             </p>
           </div>
           </ScrollReveal>
@@ -104,7 +104,8 @@ const ProgramSection = () => {
 
           <div className="text-center pt-8">
             <ShinyButton size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              💡 Quero Treinar Minha Equipe
+              <Lightbulb className="w-5 h-5" />
+              Quero Treinar Minha Equipe
             </ShinyButton>
           </div>
           </ScrollReveal>

@@ -28,12 +28,12 @@ const LocationSection = () => {
         {/* Header */}
         <div className="container-custom">
           <ScrollReveal>
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold">
+          <div className="text-center space-y-4 mb-12 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
               Um ambiente feito para transformar{" "}
               <span className="text-gradient-gold">mentes em resultados</span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Nossa sede em Itapema/SC é um espaço físico de aprendizado, estratégia e performance
             </p>
           </div>

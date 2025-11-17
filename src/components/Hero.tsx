@@ -1,6 +1,6 @@
 import ShinyButton from "@/components/ShinyButton";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import { ArrowRight } from "lucide-react";
+import { Rocket, Calendar } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -15,29 +15,29 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight px-4">
             Cansado de pagar agências e{" "}
             <span className="text-gradient-gold">não ver resultado?</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             Treine o seu próprio time e assuma o controle do seu marketing.
           </p>
 
-          <p className="text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-foreground/80 max-w-3xl mx-auto px-4">
             A F3S é a escola presencial que forma equipes de alta performance em marketing e vendas — 
             ensinando estratégia, tráfego, funil e posicionamento aplicados à sua empresa.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 px-4">
             <ShinyButton
               size="lg"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              🚀 Quero Treinar Minha Equipe
-              <ArrowRight className="ml-2 w-5 h-5 inline-block" />
+              <Rocket className="w-5 h-5" />
+              Quero Treinar Minha Equipe
             </ShinyButton>
             
             <ShinyButton
@@ -45,7 +45,8 @@ const Hero = () => {
               variant="outline"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              📅 Agendar Diagnóstico Gratuito
+              <Calendar className="w-5 h-5" />
+              Agendar Diagnóstico Gratuito
             </ShinyButton>
           </div>
 

@@ -25,8 +25,8 @@ const ComparisonSection = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-6xl mx-auto space-y-12">
           <ScrollReveal>
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
+          <div className="text-center space-y-4 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
               Você não precisa{" "}
               <span className="text-gradient-gold">terceirizar o coração do seu negócio</span>
             </h2>

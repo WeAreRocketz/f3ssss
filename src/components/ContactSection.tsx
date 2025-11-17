@@ -55,17 +55,17 @@ Quero saber mais sobre o programa F3S TEAM!`;
         <div className="max-w-3xl mx-auto space-y-12">
           {/* Header */}
           <ScrollReveal>
-          <div className="text-center space-y-6">
+          <div className="text-center space-y-6 px-4">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-sm font-semibold text-accent">
               <Rocket className="w-4 h-4" />
               Dê o Primeiro Passo
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
               Quer ter um time que entende, executa e escala o seu negócio?
             </h2>
             
-            <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
               Agende um diagnóstico gratuito e descubra como aplicar o método F3S na sua empresa.
             </p>
           </div>
@@ -73,8 +73,9 @@ Quero saber mais sobre o programa F3S TEAM!`;
 
           {/* Form */}
           <ScrollReveal delay={200}>
-          <div className="bg-card text-card-foreground rounded-3xl p-8 md:p-12 shadow-2xl border border-accent/20">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="relative bg-card/40 backdrop-blur-xl border border-accent/20 text-card-foreground rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl" />
+            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-base font-semibold">Nome Completo *</Label>
                 <Input
@@ -84,7 +85,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent"
+                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
                 />
               </div>
 
@@ -97,7 +98,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   required
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent"
+                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
                 />
               </div>
 
@@ -110,7 +111,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   required
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent"
+                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
                 />
               </div>
 
@@ -123,7 +124,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   required
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent"
+                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
                 />
               </div>
 
@@ -132,8 +133,9 @@ Quero saber mais sobre o programa F3S TEAM!`;
                 size="lg"
                 className="w-full"
               >
-                🚀 Quero Treinar Minha Equipe com a F3S
-                <Send className="ml-2 w-5 h-5 inline-block" />
+                <Rocket className="w-5 h-5" />
+                Quero Treinar Minha Equipe com a F3S
+                <Send className="w-5 h-5" />
               </ShinyButton>
 
               <p className="text-center text-sm text-muted-foreground">
