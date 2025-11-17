@@ -59,6 +59,17 @@ const defaultContent: ContentData = {
   'image.logo': '',
   'image.ariston': '',
   'image.office': '',
+  
+  // Settings
+  'settings.email': 'contato@f3s.com.br',
+  'settings.whatsapp': '5547999999999',
+  'settings.footerEmail': 'contato@f3s.com.br',
+  'settings.footerWhatsapp': '5547999999999',
+  'settings.facebookPixel': '',
+  'settings.tiktokPixel': '',
+  'settings.googleAds': '',
+  'settings.googleAnalytics': '',
+  'settings.customScripts': '',
 };
 
 export const ContentProvider = ({ children }: { children: ReactNode }) => {

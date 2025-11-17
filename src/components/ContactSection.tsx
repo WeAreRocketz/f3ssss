@@ -7,6 +7,14 @@ import { Rocket, Send } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { useContent } from "@/hooks/useContent";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
+  company: z.string().trim().min(1, "Empresa é obrigatória").max(100, "Nome da empresa muito longo"),
+  role: z.string().trim().min(1, "Cargo é obrigatório").max(100, "Cargo muito longo"),
+  whatsapp: z.string().trim().min(10, "WhatsApp inválido").max(20, "WhatsApp inválido")
+});
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -17,9 +25,32 @@ const ContactSection = () => {
     role: "",
     whatsapp: ""
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    try {
+      contactSchema.parse(formData);
+      setErrors({});
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const newErrors: Record<string, string> = {};
+        error.issues.forEach((issue) => {
+          if (issue.path[0]) {
+            newErrors[issue.path[0].toString()] = issue.message;
+          }
+        });
+        setErrors(newErrors);
+        toast({
+          title: "Erro no formulário",
+          description: "Por favor, corrija os erros antes de enviar.",
+          variant: "destructive",
+        });
+        return;
+      }
+    }
     
     // Format WhatsApp message
     const message = `Olá! Vim pelo site da F3S.
@@ -31,7 +62,8 @@ const ContactSection = () => {
 
 Quero saber mais sobre o programa F3S TEAM!`;
 
-    const whatsappUrl = `https://wa.me/5547999999999?text=${encodeURIComponent(message)}`;
+    const whatsappNumber = content['settings.whatsapp'] || '5547999999999';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
     
@@ -42,6 +74,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
 
     // Reset form
     setFormData({ name: "", company: "", role: "", whatsapp: "" });
+    setErrors({});
   };
 
   return (
@@ -89,11 +122,11 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   id="name"
                   type="text"
                   placeholder="Seu nome"
-                  required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
+                  className={`h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm ${errors.name ? 'border-red-500' : ''}`}
                 />
+                {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
               </div>
 
               <div className="space-y-2">
@@ -102,11 +135,11 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   id="company"
                   type="text"
                   placeholder="Nome da sua empresa"
-                  required
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
+                  className={`h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm ${errors.company ? 'border-red-500' : ''}`}
                 />
+                {errors.company && <p className="text-sm text-red-500">{errors.company}</p>}
               </div>
 
               <div className="space-y-2">
@@ -115,11 +148,11 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   id="role"
                   type="text"
                   placeholder="Seu cargo na empresa"
-                  required
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
+                  className={`h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm ${errors.role ? 'border-red-500' : ''}`}
                 />
+                {errors.role && <p className="text-sm text-red-500">{errors.role}</p>}
               </div>
 
               <div className="space-y-2">
@@ -128,11 +161,11 @@ Quero saber mais sobre o programa F3S TEAM!`;
                   id="whatsapp"
                   type="tel"
                   placeholder="(47) 99999-9999"
-                  required
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                  className="h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm"
+                  className={`h-12 text-base border-2 focus:border-accent bg-background/50 backdrop-blur-sm ${errors.whatsapp ? 'border-red-500' : ''}`}
                 />
+                {errors.whatsapp && <p className="text-sm text-red-500">{errors.whatsapp}</p>}
               </div>
 
               <ShinyButton 

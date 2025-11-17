@@ -163,7 +163,7 @@ const Admin = () => {
 
       <main className="container-custom py-8">
         <Tabs defaultValue="hero" className="space-y-6">
-          <TabsList className="grid grid-cols-3 lg:grid-cols-7 gap-2">
+          <TabsList className="grid grid-cols-3 lg:grid-cols-8 gap-2">
             <TabsTrigger value="hero">Hero</TabsTrigger>
             <TabsTrigger value="pain">Pain</TabsTrigger>
             <TabsTrigger value="differential">Diferenciais</TabsTrigger>
@@ -171,6 +171,7 @@ const Admin = () => {
             <TabsTrigger value="program">Programa</TabsTrigger>
             <TabsTrigger value="location">Localização</TabsTrigger>
             <TabsTrigger value="contact">Contato</TabsTrigger>
+            <TabsTrigger value="settings">Configurações</TabsTrigger>
           </TabsList>
 
           <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
@@ -238,6 +239,81 @@ const Admin = () => {
             <h2 className="text-2xl font-heading font-bold mb-4">Seção Contato</h2>
             <ContentEditor contentKey="contact.headline" label="Título" />
             <ContentEditor contentKey="contact.subheadline" label="Subtítulo" />
+          </TabsContent>
+
+          <TabsContent value="settings" className="space-y-6 bg-card rounded-2xl p-6">
+            <h2 className="text-2xl font-heading font-bold mb-4">Configurações Gerais</h2>
+            
+            <div className="border-b pb-6 mb-6">
+              <h3 className="text-xl font-semibold mb-4">Contatos</h3>
+              <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-4">
+                <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                  <strong>⚠️ Nota sobre envio de emails:</strong> O formulário atualmente redireciona para WhatsApp. 
+                  Para receber emails do formulário, você precisará configurar um serviço de backend (Resend, SendGrid, etc) 
+                  ou integrar com um serviço como Formspree ou Netlify Forms após fazer deploy na Hostinger.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <ContentEditor 
+                  contentKey="settings.email" 
+                  label="Email para receber formulário (Requer configuração de backend)" 
+                />
+                <ContentEditor 
+                  contentKey="settings.whatsapp" 
+                  label="WhatsApp de contato (com código do país, ex: 5547999999999)" 
+                />
+                <ContentEditor 
+                  contentKey="settings.footerEmail" 
+                  label="Email do rodapé" 
+                />
+                <ContentEditor 
+                  contentKey="settings.footerWhatsapp" 
+                  label="WhatsApp do rodapé (com código do país)" 
+                />
+              </div>
+            </div>
+
+            <div className="border-b pb-6 mb-6">
+              <h3 className="text-xl font-semibold mb-4">Pixels e Tracking</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Cole o código completo do script fornecido por cada plataforma. 
+                Inclua as tags &lt;script&gt; no código.
+              </p>
+              <div className="space-y-4">
+                <ContentEditor 
+                  contentKey="settings.facebookPixel" 
+                  label="Facebook Pixel (código completo com <script>)" 
+                  multiline
+                />
+                <ContentEditor 
+                  contentKey="settings.tiktokPixel" 
+                  label="TikTok Pixel (código completo com <script>)" 
+                  multiline
+                />
+                <ContentEditor 
+                  contentKey="settings.googleAds" 
+                  label="Google Ads (código completo com <script>)" 
+                  multiline
+                />
+                <ContentEditor 
+                  contentKey="settings.googleAnalytics" 
+                  label="Google Analytics (código completo com <script>)" 
+                  multiline
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Scripts Personalizados</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Adicione qualquer outro código de tracking ou scripts personalizados aqui.
+              </p>
+              <ContentEditor 
+                contentKey="settings.customScripts" 
+                label="Scripts Personalizados" 
+                multiline
+              />
+            </div>
           </TabsContent>
         </Tabs>
       </main>
