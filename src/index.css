@@ -215,6 +215,59 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes growth-bar-1 {
+  0%, 100% {
+    transform: scaleY(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes growth-bar-2 {
+  0%, 100% {
+    transform: scaleY(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes growth-bar-3 {
+  0%, 100% {
+    transform: scaleY(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dash-flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 150;
+  }
+}
+
+@keyframes arrow-pulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+}
+
 @keyframes hero-circle {
   0% {
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
