@@ -3,10 +3,12 @@ import { Menu, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ShinyButton from "@/components/ShinyButton";
 import f3sLogo from "@/assets/f3s-logo.png";
+import { useContent } from "@/hooks/useContent";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { content } = useContent();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +47,11 @@ const Header = () => {
             onClick={() => scrollToSection("hero")}
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <img src={f3sLogo} alt="F3S Logo" className="h-10 md:h-12 w-auto" />
+            <img 
+              src={content['image.logo'] || f3sLogo} 
+              alt="F3S Logo" 
+              className="h-10 md:h-12 w-auto" 
+            />
           </button>
 
           {/* Desktop Menu */}

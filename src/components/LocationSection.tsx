@@ -86,7 +86,7 @@ const LocationSection = () => {
 
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-accent/20">
                 <img 
-                  src={officePhoto} 
+                  src={content['image.office'] || officePhoto} 
                   alt="F3S Office - Escritório em Itapema/SC" 
                   className="w-full h-full object-cover"
                 />

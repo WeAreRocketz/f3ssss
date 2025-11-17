@@ -4,10 +4,19 @@ interface ContentData {
   [key: string]: string;
 }
 
+interface ContentVersion {
+  timestamp: number;
+  data: ContentData;
+  label: string;
+}
+
 interface ContentContextType {
   content: ContentData;
   updateContent: (key: string, value: string) => void;
   resetContent: () => void;
+  saveVersion: (label: string) => void;
+  getVersions: () => ContentVersion[];
+  restoreVersion: (timestamp: number) => void;
 }
 
 const ContentContext = createContext<ContentContextType | undefined>(undefined);
@@ -101,8 +110,46 @@ export const ContentProvider = ({ children }: { children: ReactNode }) => {
     setContent(defaultContent);
   };
 
+  const saveVersion = (label: string) => {
+    const versions = getVersions();
+    const newVersion: ContentVersion = {
+      timestamp: Date.now(),
+      data: { ...content },
+      label: label || `Versão ${new Date().toLocaleString('pt-BR')}`
+    };
+    
+    const updatedVersions = [...versions, newVersion];
+    // Keep only last 10 versions
+    if (updatedVersions.length > 10) {
+      updatedVersions.shift();
+    }
+    
+    localStorage.setItem('f3s-versions', JSON.stringify(updatedVersions));
+  };
+
+  const getVersions = (): ContentVersion[] => {
+    const stored = localStorage.getItem('f3s-versions');
+    if (stored) {
+      try {
+        return JSON.parse(stored);
+      } catch (e) {
+        return [];
+      }
+    }
+    return [];
+  };
+
+  const restoreVersion = (timestamp: number) => {
+    const versions = getVersions();
+    const version = versions.find(v => v.timestamp === timestamp);
+    if (version) {
+      setContent(version.data);
+      localStorage.setItem('f3s-content', JSON.stringify(version.data));
+    }
+  };
+
   return (
-    <ContentContext.Provider value={{ content, updateContent, resetContent }}>
+    <ContentContext.Provider value={{ content, updateContent, resetContent, saveVersion, getVersions, restoreVersion }}>
       {children}
     </ContentContext.Provider>
   );

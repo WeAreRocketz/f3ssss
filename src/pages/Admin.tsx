@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, LogOut } from 'lucide-react';
+import { Lock, LogOut, Save } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { useContent } from '@/hooks/useContent';
+import ImageUploader from '@/components/ImageUploader';
+import VersionHistory from '@/components/VersionHistory';
 import f3sLogo from '@/assets/f3s-logo.png';
 
 const Admin = () => {
@@ -16,7 +18,7 @@ const Admin = () => {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const { toast } = useToast();
   const navigate = useNavigate();
-  const { content, updateContent, resetContent } = useContent();
+  const { content, updateContent, resetContent, saveVersion } = useContent();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,12 +53,17 @@ const Admin = () => {
   };
 
   const handleReset = () => {
-    if (confirm('Tem certeza que deseja resetar todo o conteúdo para o padrão?')) {
+    if (confirm('Tem certeza que deseja resetar todo o conteúdo para o padrão? Esta ação não pode ser desfeita.')) {
+      // Save current version before resetting
+      saveVersion(`Backup antes do reset - ${new Date().toLocaleString('pt-BR')}`);
+      
       resetContent();
       toast({
         title: 'Conteúdo resetado!',
-        description: 'Todo o conteúdo foi restaurado para o padrão.',
+        description: 'Todo o conteúdo foi restaurado para o padrão. Uma cópia de backup foi salva no histórico.',
       });
+      
+      setTimeout(() => window.location.reload(), 1500);
     }
   };
 
@@ -150,7 +157,14 @@ const Admin = () => {
                 Ver Site
               </Button>
               <Button variant="outline" onClick={handleReset}>
-                Resetar Conteúdo
+                Resetar ao Padrão
+              </Button>
+              <Button 
+                variant="outline"
+                onClick={() => saveVersion(`Salvamento manual - ${new Date().toLocaleString('pt-BR')}`)}
+              >
+                <Save className="w-4 h-4 mr-2" />
+                Salvar Versão
               </Button>
               <Button variant="destructive" onClick={handleLogout}>
                 <LogOut className="w-4 h-4 mr-2" />
@@ -163,7 +177,7 @@ const Admin = () => {
 
       <main className="container-custom py-8">
         <Tabs defaultValue="hero" className="space-y-6">
-          <TabsList className="grid grid-cols-3 lg:grid-cols-8 gap-2">
+          <TabsList className="grid grid-cols-3 lg:grid-cols-9 gap-2">
             <TabsTrigger value="hero">Hero</TabsTrigger>
             <TabsTrigger value="pain">Pain</TabsTrigger>
             <TabsTrigger value="differential">Diferenciais</TabsTrigger>
@@ -171,7 +185,9 @@ const Admin = () => {
             <TabsTrigger value="program">Programa</TabsTrigger>
             <TabsTrigger value="location">Localização</TabsTrigger>
             <TabsTrigger value="contact">Contato</TabsTrigger>
+            <TabsTrigger value="images">Imagens</TabsTrigger>
             <TabsTrigger value="settings">Configurações</TabsTrigger>
+            <TabsTrigger value="versions">Histórico</TabsTrigger>
           </TabsList>
 
           <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
@@ -330,6 +346,48 @@ const Admin = () => {
                 multiline
               />
             </div>
+          </TabsContent>
+
+          <TabsContent value="images" className="space-y-6 bg-card rounded-2xl p-6">
+            <h2 className="text-2xl font-heading font-bold mb-4">Gerenciar Imagens</h2>
+            
+            <div className="space-y-6">
+              <ImageUploader
+                label="Logo F3S"
+                contentKey="image.logo"
+                currentImage={content['image.logo']}
+                onImageChange={updateContent}
+              />
+              
+              <div className="border-t pt-6">
+                <ImageUploader
+                  label="Foto do Ariston Ferraz"
+                  contentKey="image.ariston"
+                  currentImage={content['image.ariston']}
+                  onImageChange={updateContent}
+                />
+              </div>
+              
+              <div className="border-t pt-6">
+                <ImageUploader
+                  label="Foto do Escritório"
+                  contentKey="image.office"
+                  currentImage={content['image.office']}
+                  onImageChange={updateContent}
+                />
+              </div>
+            </div>
+
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mt-6">
+              <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                <strong>⚠️ Importante:</strong> As imagens são convertidas para Base64 e armazenadas no navegador. 
+                Imagens muito grandes podem impactar o desempenho. Recomendamos usar imagens otimizadas (máx 5MB cada).
+              </p>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="versions">
+            <VersionHistory />
           </TabsContent>
         </Tabs>
       </main>
