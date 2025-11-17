@@ -53,7 +53,7 @@ const ProgramSection = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
               {content['program.headline']}
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-accent font-semibold gold-shine">
+            <p className="text-lg sm:text-xl md:text-2xl text-accent font-semibold gold-shine-light">
               {content['program.subheadline']}
             </p>
           </div>
@@ -68,7 +68,7 @@ const ProgramSection = () => {
               >
                 <div className="flex items-center gap-4 mb-6 pb-4 border-b border-border/50">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(197,162,83,0.3)] group-hover:shadow-[0_0_30px_rgba(197,162,83,0.5)] transition-all">
-                    <span className="text-2xl md:text-3xl font-heading font-bold text-accent gold-shine">{week.number}</span>
+                    <span className="text-2xl md:text-3xl font-heading font-bold text-accent gold-shine-light">{week.number}</span>
                   </div>
                   <h3 className="text-xl md:text-2xl font-heading font-bold leading-tight flex-1">{week.title}</h3>
                 </div>
@@ -76,7 +76,7 @@ const ProgramSection = () => {
                 <ul className="grid md:grid-cols-2 gap-4">
                   {week.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 p-4 rounded-xl bg-secondary/30 hover:bg-accent/5 transition-all">
-                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5 gold-shine" />
+                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5 gold-shine-light" />
                       <span className="text-muted-foreground leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -90,7 +90,7 @@ const ProgramSection = () => {
           <div className="text-center bg-accent/10 border-2 border-accent/30 rounded-3xl p-8 shadow-lg">
             <p className="text-lg md:text-xl font-semibold">
               Nosso treinamento não será apenas teórico mas focado no que dará resultado para sua empresa 
-              que é o <span className="text-accent">acompanhamento prático</span>.
+              que é o <span className="text-accent gold-shine-light">acompanhamento prático</span>.
             </p>
           </div>
           </ScrollReveal>
@@ -98,17 +98,20 @@ const ProgramSection = () => {
           <ScrollReveal delay={800}>
           <div className="text-center">
             <div className="inline-block bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 rounded-2xl p-8 md:p-12 border border-accent/20 shadow-[0_0_40px_rgba(197,162,83,0.2)]">
-              <p className="text-2xl md:text-4xl font-heading font-bold text-accent leading-tight">
+              <p className="text-2xl md:text-4xl font-heading font-bold text-accent gold-shine-light leading-tight">
                 "Em 4 semanas, a sua equipe deixa de ser operacional e se torna estratégica."
               </p>
             </div>
           </div>
 
-          <div className="text-center pt-8">
+          <div className="flex flex-col items-center gap-2 pt-8">
             <ShinyButton size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               <Lightbulb className="w-5 h-5" />
               Quero Treinar Minha Equipe
             </ShinyButton>
+            <p className="text-sm text-muted-foreground">
+              Agende o diagnóstico gratuito
+            </p>
           </div>
           </ScrollReveal>
         </div>

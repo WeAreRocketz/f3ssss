@@ -51,7 +51,7 @@ const LocationSection = () => {
               <div className="space-y-8">
                 <div className="bg-card/80 backdrop-blur rounded-3xl px-8 py-6 shadow-xl border border-accent/30">
                   <div className="flex items-center gap-4">
-                    <MapPin className="w-8 h-8 text-accent flex-shrink-0 gold-shine" />
+                    <MapPin className="w-8 h-8 text-accent flex-shrink-0 gold-shine-light" />
                     <div>
                       <p className="font-heading font-bold text-2xl md:text-3xl text-gradient-gold">{content['location.city']}</p>
                       <p className="text-base text-muted-foreground mt-1">{content['location.subtitle']}</p>
@@ -61,21 +61,21 @@ const LocationSection = () => {
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 p-4 rounded-2xl bg-card/60 backdrop-blur border border-border/50 hover:border-accent/30 transition-all">
-                    <Building2 className="w-6 h-6 text-accent mt-1 flex-shrink-0 gold-shine" />
+                    <Building2 className="w-6 h-6 text-accent mt-1 flex-shrink-0 gold-shine-light" />
                     <div>
                       <h4 className="font-semibold text-lg mb-2">Estrutura Premium</h4>
                       <p className="text-muted-foreground">Salas equipadas com tecnologia de ponta</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 rounded-2xl bg-card/60 backdrop-blur border border-border/50 hover:border-accent/30 transition-all">
-                    <Users className="w-6 h-6 text-accent mt-1 flex-shrink-0 gold-shine" />
+                    <Users className="w-6 h-6 text-accent mt-1 flex-shrink-0 gold-shine-light" />
                     <div>
                       <h4 className="font-semibold text-lg mb-2">Turmas Pequenas</h4>
                       <p className="text-muted-foreground">Acompanhamento próximo e personalizado</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 rounded-2xl bg-card/60 backdrop-blur border border-border/50 hover:border-accent/30 transition-all">
-                    <Lightbulb className="w-6 h-6 text-accent mt-1 flex-shrink-0 gold-shine" />
+                    <Lightbulb className="w-6 h-6 text-accent mt-1 flex-shrink-0 gold-shine-light" />
                     <div>
                       <h4 className="font-semibold text-lg mb-2">Ambiente Imersivo</h4>
                       <p className="text-muted-foreground">Teoria e prática em tempo real</p>
