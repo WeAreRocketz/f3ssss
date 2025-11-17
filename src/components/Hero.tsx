@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none">
+      <div className="absolute inset-0 w-full h-full">
         <video
           autoPlay
           loop
