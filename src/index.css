@@ -217,33 +217,66 @@ All colors MUST be HSL.
 
 @keyframes growth-bar-1 {
   0%, 100% {
-    transform: scaleY(0.8);
-    opacity: 0.6;
+    transform: translateY(0);
+    opacity: 0.7;
   }
   50% {
-    transform: scaleY(1);
+    transform: translateY(-20px);
     opacity: 1;
   }
 }
 
 @keyframes growth-bar-2 {
   0%, 100% {
-    transform: scaleY(0.85);
-    opacity: 0.6;
+    transform: translateY(0);
+    opacity: 0.7;
   }
   50% {
-    transform: scaleY(1);
+    transform: translateY(-25px);
     opacity: 1;
   }
 }
 
 @keyframes growth-bar-3 {
   0%, 100% {
-    transform: scaleY(0.9);
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+}
+
+@keyframes bar-bounce-1 {
+  0%, 100% {
+    transform: translateY(0);
     opacity: 0.6;
   }
   50% {
-    transform: scaleY(1);
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+}
+
+@keyframes bar-bounce-2 {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-25px);
+    opacity: 1;
+  }
+}
+
+@keyframes bar-bounce-3 {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-35px);
     opacity: 1;
   }
 }
