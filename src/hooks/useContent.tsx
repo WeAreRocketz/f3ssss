@@ -70,6 +70,7 @@ const defaultContent: ContentData = {
   'settings.googleAds': '',
   'settings.googleAnalytics': '',
   'settings.customScripts': '',
+  'settings.typeform': '', // Typeform embed code or URL
 };
 
 export const ContentProvider = ({ children }: { children: ReactNode }) => {

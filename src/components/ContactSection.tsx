@@ -113,8 +113,17 @@ Quero saber mais sobre o programa F3S TEAM!`;
           </div>
           </ScrollReveal>
 
-          {/* Form */}
+          {/* Form or Typeform */}
           <ScrollReveal delay={200}>
+          {content['settings.typeform'] ? (
+            // Show Typeform if configured
+            <div 
+              className="relative bg-card/40 backdrop-blur-xl border border-accent/20 rounded-3xl overflow-hidden shadow-2xl"
+              style={{ minHeight: '500px' }}
+              dangerouslySetInnerHTML={{ __html: content['settings.typeform'] }}
+            />
+          ) : (
+            // Show default contact form if Typeform not configured
           <div className="relative bg-card/40 backdrop-blur-xl border border-accent/20 text-card-foreground rounded-3xl p-8 md:p-12 shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl" />
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
@@ -185,6 +194,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
               </p>
             </form>
           </div>
+          )}
           </ScrollReveal>
 
           {/* Trust elements */}

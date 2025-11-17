@@ -274,6 +274,22 @@ const Admin = () => {
             </div>
 
             <div className="border-b pb-6 mb-6">
+              <h3 className="text-xl font-semibold mb-4">Integração Typeform</h3>
+              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
+                <p className="text-sm text-blue-800 dark:text-blue-200">
+                  <strong>💡 Como usar:</strong> Cole o código embed completo do Typeform abaixo. 
+                  Quando configurado, o formulário de contato padrão será substituído automaticamente pelo Typeform.
+                  Para remover o Typeform e voltar ao formulário padrão, basta limpar o campo e salvar.
+                </p>
+              </div>
+              <ContentEditor 
+                contentKey="settings.typeform" 
+                label="Código Embed do Typeform (HTML completo com <iframe> ou <div>)" 
+                multiline
+              />
+            </div>
+
+            <div className="border-b pb-6 mb-6">
               <h3 className="text-xl font-semibold mb-4">Pixels e Tracking</h3>
               <p className="text-sm text-muted-foreground mb-4">
                 Cole o código completo do script fornecido por cada plataforma. 
