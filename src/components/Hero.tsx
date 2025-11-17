@@ -5,12 +5,14 @@ import f3sLogo from "@/assets/f3s-logo.png";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/30">
+    <section id="hero" className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/30">
       {/* Background decorative elements */}
       <AnimatedBackground />
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        {/* Animated golden circle */}
+        <div className="hero-animated-circle" />
       </div>
 
       <div className="container-custom relative z-10">

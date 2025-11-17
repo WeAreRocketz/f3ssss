@@ -243,3 +243,38 @@ All colors MUST be HSL.
     transform: translate(40px, -50px) scale(1.1);
   }
 }
+
+@keyframes hero-circle {
+  0%, 100% {
+    transform: translateX(50em) translateY(5em) scale(1.4);
+  }
+  50% {
+    transform: translateX(0em) translateY(-5em) scale(1);
+  }
+}
+
+.hero-section {
+  overflow: hidden !important;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 3 !important;
+}
+
+.hero-animated-circle {
+  content: "";
+  pointer-events: none;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15em;
+  left: 0;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  background: hsl(var(--accent) / 0.5);
+  animation: hero-circle 20s infinite alternate ease-out;
+  transition: 0.5s all;
+  filter: blur(100px);
+}
