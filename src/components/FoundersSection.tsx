@@ -1,5 +1,7 @@
 import aristonPhoto from "@/assets/ariston.webp";
 import ExpertiseBar from "@/components/ExpertiseBar";
+import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 interface Founder {
   name: string;
@@ -40,6 +42,7 @@ const FoundersSection = () => {
   return (
     <section id="fundadores" className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
       {/* Background decorative */}
+      <AnimatedBackground />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float-slow" />
       </div>
@@ -59,8 +62,12 @@ const FoundersSection = () => {
           {/* Founders - Large Layout */}
           <div className="space-y-24">
             {founders.map((founder, index) => (
-              <div 
+              <ScrollReveal 
                 key={index}
+                direction={index % 2 === 0 ? 'left' : 'right'}
+                delay={200}
+              >
+              <div 
                 className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${
                   index % 2 === 1 ? 'md:grid-flow-dense' : ''
                 }`}
@@ -124,6 +131,7 @@ const FoundersSection = () => {
                   </div>
                 </div>
               </div>
+              </ScrollReveal>
             ))}
           </div>
 

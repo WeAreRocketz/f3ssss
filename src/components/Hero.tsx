@@ -1,10 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Rocket } from "lucide-react";
+import ShinyButton from "@/components/ShinyButton";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-secondary/30">
       {/* Background decorative elements */}
+      <AnimatedBackground />
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -30,23 +32,21 @@ const Hero = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button 
-              size="lg" 
-              className="bg-accent hover:bg-accent/90 text-white font-semibold text-base px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+            <ShinyButton
+              size="lg"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               🚀 Quero Treinar Minha Equipe
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+              <ArrowRight className="ml-2 w-5 h-5 inline-block" />
+            </ShinyButton>
             
-            <Button 
-              size="lg" 
+            <ShinyButton
+              size="lg"
               variant="outline"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-base px-8 py-6 rounded-xl transition-all duration-300"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               📅 Agendar Diagnóstico Gratuito
-            </Button>
+            </ShinyButton>
           </div>
 
           {/* Trust indicators */}

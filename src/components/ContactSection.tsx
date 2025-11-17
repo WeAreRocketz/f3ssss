@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+import ShinyButton from "@/components/ShinyButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Rocket, Send } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -44,6 +45,7 @@ Quero saber mais sobre o programa F3S TEAM!`;
   return (
     <section id="contact" className="section-padding bg-gradient-to-b from-primary to-primary/90 text-primary-foreground relative overflow-hidden">
       {/* Background decoration */}
+      <AnimatedBackground />
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
@@ -125,14 +127,14 @@ Quero saber mais sobre o programa F3S TEAM!`;
                 />
               </div>
 
-              <Button 
+              <ShinyButton 
                 type="submit"
                 size="lg"
-                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold text-lg py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+                className="w-full"
               >
                 🚀 Quero Treinar Minha Equipe com a F3S
-                <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                <Send className="ml-2 w-5 h-5 inline-block" />
+              </ShinyButton>
 
               <p className="text-center text-sm text-muted-foreground">
                 * Todos os campos são obrigatórios

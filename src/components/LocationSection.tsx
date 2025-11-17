@@ -1,5 +1,6 @@
 import { MapPin, Building2, Users, Lightbulb } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const LocationSection = () => {
   const features = [
@@ -21,8 +22,9 @@ const LocationSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-secondary/30 to-background">
-      <div className="w-full">
+    <section className="section-padding bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+      <AnimatedBackground />
+      <div className="w-full relative z-10">
         {/* Header */}
         <div className="container-custom">
           <ScrollReveal>

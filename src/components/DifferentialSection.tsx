@@ -1,5 +1,6 @@
 import { Target, Users, TrendingUp, Award } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const DifferentialSection = () => {
   const differentials = [
@@ -26,8 +27,9 @@ const DifferentialSection = () => {
   ];
 
   return (
-    <section id="diferenciais" className="section-padding bg-gradient-to-b from-background to-secondary/30">
-      <div className="container-custom">
+    <section id="diferenciais" className="section-padding bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+      <AnimatedBackground />
+      <div className="container-custom relative z-10">
         <div className="max-w-5xl mx-auto space-y-16">
           {/* Header */}
           <ScrollReveal>
