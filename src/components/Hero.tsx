@@ -12,27 +12,26 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
-      >
-        <source src={bgDeskVideo} type="video/mp4" />
-      </video>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 md:hidden"
-      >
-        <source src={bgMobVideo} type="video/mp4" />
-      </video>
-      
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/60 z-[1]" />
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-15 hidden md:block"
+        >
+          <source src={bgDeskVideo} type="video/mp4" />
+        </video>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-15 md:hidden"
+        >
+          <source src={bgMobVideo} type="video/mp4" />
+        </video>
+      </div>
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
