@@ -1,7 +1,6 @@
 import { CheckCircle2, Lightbulb } from "lucide-react";
 import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import { useContent } from "@/hooks/useContent";
 
 const ProgramSection = () => {
@@ -44,7 +43,6 @@ const ProgramSection = () => {
 
   return (
     <section id="programa" className="section-padding bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
-      <AnimatedBackground />
       <div className="container-custom relative z-10">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}

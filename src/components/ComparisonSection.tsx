@@ -1,6 +1,5 @@
 import { X, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 const ComparisonSection = () => {
   const oldModel = [
@@ -21,7 +20,6 @@ const ComparisonSection = () => {
 
   return (
     <section className="section-padding bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
-      <AnimatedBackground />
       <div className="container-custom relative z-10">
         <div className="max-w-6xl mx-auto space-y-12">
           <ScrollReveal>

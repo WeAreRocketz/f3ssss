@@ -2,7 +2,6 @@ import aristonPhoto from "@/assets/ariston.webp";
 import gilvanePhoto from "@/assets/gilvane.webp";
 import ExpertiseBar from "@/components/ExpertiseBar";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import ShinyBanner from "@/components/ShinyBanner";
 import { useContent } from "@/hooks/useContent";
 
@@ -48,7 +47,6 @@ const FoundersSection = () => {
   return (
     <section id="fundadores" className="section-padding bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
       {/* Background decorative */}
-      <AnimatedBackground />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float-slow" />
       </div>

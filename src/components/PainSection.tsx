@@ -1,7 +1,6 @@
 import { XCircle, TrendingDown, Clock, Rocket, Calendar } from "lucide-react";
 import ShinyButton from "@/components/ShinyButton";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import { useContent } from "@/hooks/useContent";
 
 const PainSection = () => {
@@ -28,7 +27,6 @@ const PainSection = () => {
   return (
     <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background pattern */}
-      <AnimatedBackground />
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
