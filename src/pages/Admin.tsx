@@ -192,7 +192,8 @@ const Admin = () => {
 
           <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
             <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero</h2>
-            <ContentEditor contentKey="hero.headline" label="Título Principal" />
+            <ContentEditor contentKey="hero.headline" label="Título Principal (Parte 1)" />
+            <ContentEditor contentKey="hero.headline.gold" label="Título Principal (Parte Dourada)" />
             <ContentEditor contentKey="hero.subheadline" label="Subtítulo" />
             <ContentEditor contentKey="hero.description" label="Descrição" multiline />
           </TabsContent>
@@ -214,7 +215,9 @@ const Admin = () => {
 
           <TabsContent value="founders" className="space-y-6 bg-card rounded-2xl p-6">
             <h2 className="text-2xl font-heading font-bold mb-4">Seção Fundadores</h2>
-            <ContentEditor contentKey="founders.headline" label="Título da Seção" />
+            <ContentEditor contentKey="founders.headline" label="Título da Seção (Parte 1)" />
+            <ContentEditor contentKey="founders.headline.gold" label="Título da Seção (Parte Dourada)" />
+            <ContentEditor contentKey="founders.headline.suffix" label="Título da Seção (Parte Final)" />
             
             <div className="border-t pt-4 mt-4">
               <h3 className="text-xl font-semibold mb-3">Ariston Ferraz</h3>
@@ -245,7 +248,8 @@ const Admin = () => {
 
           <TabsContent value="location" className="space-y-6 bg-card rounded-2xl p-6">
             <h2 className="text-2xl font-heading font-bold mb-4">Seção Localização</h2>
-            <ContentEditor contentKey="location.headline" label="Título" />
+            <ContentEditor contentKey="location.headline" label="Título (Parte 1)" />
+            <ContentEditor contentKey="location.headline.gold" label="Título (Parte Dourada)" />
             <ContentEditor contentKey="location.subheadline" label="Subtítulo" />
             <ContentEditor contentKey="location.city" label="Cidade" />
             <ContentEditor contentKey="location.subtitle" label="Subtítulo da Localização" />

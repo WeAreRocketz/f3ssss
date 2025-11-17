@@ -23,7 +23,8 @@ const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
 const defaultContent: ContentData = {
   // Hero Section
-  'hero.headline': 'Cansado de pagar agências e não ver resultado?',
+  'hero.headline': 'Cansado de pagar agências e',
+  'hero.headline.gold': 'não ver resultado?',
   'hero.subheadline': 'Treine o seu próprio time e assuma o controle do seu marketing.',
   'hero.description': 'A F3S é a escola presencial que forma equipes de alta performance em marketing e vendas — ensinando estratégia, tráfego, funil e posicionamento aplicados à sua empresa.',
   
@@ -39,7 +40,9 @@ const defaultContent: ContentData = {
   'differential.subheadline': 'Não é um curso online. É uma formação presencial completa.',
   
   // Founders Section
-  'founders.headline': 'Criada por quem viveu o campo de batalha do digital',
+  'founders.headline': 'Criada por quem viveu',
+  'founders.headline.gold': 'o campo de batalha',
+  'founders.headline.suffix': 'do digital',
   'founders.ariston.name': 'Ariston Ferraz',
   'founders.ariston.role': 'Estratégia e Vendas Online',
   'founders.ariston.description': 'Empresário e especialista em vendas digitais com mais de R$10 milhões faturados online, criador de ecossistemas de e-commerce. Domina as estratégias que comandam o mundo online e também técnicas de vendas presenciais usando a tecnologia ao favor do time comercial.',
@@ -55,7 +58,8 @@ const defaultContent: ContentData = {
   'program.subheadline': '4 semanas. 100% presencial. 100% aplicado.',
   
   // Location Section
-  'location.headline': 'Um ambiente feito para transformar mentes em resultados',
+  'location.headline': 'Um ambiente feito para transformar',
+  'location.headline.gold': 'mentes em resultados',
   'location.subheadline': 'Nossa sede em Itapema/SC é um espaço físico de aprendizado, estratégia e performance',
   'location.city': 'Itapema, Santa Catarina',
   'location.subtitle': '120m² de puro conhecimento',

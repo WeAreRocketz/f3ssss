@@ -33,8 +33,8 @@ const LocationSection = () => {
           <ScrollReveal>
           <div className="text-center space-y-4 mb-12 px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
-              {content['location.headline']?.split('mentes em resultados')[0]}{" "}
-              <span className="text-gradient-gold">mentes em resultados</span>
+              {content['location.headline']}{" "}
+              <span className="text-gradient-gold">{content['location.headline.gold']}</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               {content['location.subheadline']}
