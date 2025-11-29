@@ -96,7 +96,7 @@ const defaultContent: ContentData = {
   'ecosystem.solution1.item3': 'Formação para empresários (F3S Business Education)',
   'ecosystem.solution1.item4': 'Workshops e imersões',
   'ecosystem.solution1.item5': 'Certificação F3S (em breve)',
-  'ecosystem.solution1.cta': 'Clique para conhecer a F3S Education',
+  'ecosystem.solution1.cta': 'Conheça a F3S Education',
   'ecosystem.solution1.url': '/team',
 
   'ecosystem.solution2.title': 'F3S TECH — Tecnologia que organiza e acelera sua operação',
@@ -108,7 +108,7 @@ const defaultContent: ContentData = {
   'ecosystem.solution2.item4': 'Padrões técnicos de funil',
   'ecosystem.solution2.item5': 'Infraestrutura operacional',
   'ecosystem.solution2.item6': 'Sistema de dados e indicadores',
-  'ecosystem.solution2.cta': 'Clique para conhecer a F3S Tech',
+  'ecosystem.solution2.cta': 'Conheça a F3S Tech',
   'ecosystem.solution2.url': '#contact',
 
   'ecosystem.solution3.title': 'F3S PERFORMANCE — Implementação real e geração de resultado',
@@ -120,7 +120,7 @@ const defaultContent: ContentData = {
   'ecosystem.solution3.item4': 'Conteúdo',
   'ecosystem.solution3.item5': 'Otimizações semanais',
   'ecosystem.solution3.item6': 'Mapeamento e crescimento contínuo',
-  'ecosystem.solution3.cta': 'Clique para conhecer a F3S Performance',
+  'ecosystem.solution3.cta': 'Conheça a F3S Performance',
   'ecosystem.solution3.url': '#contact',
 
   'ecosystem.method.headline': 'O Método F3S (os 3 fundamentos)',
