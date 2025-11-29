@@ -49,6 +49,21 @@ const SettingsContentTab = () => {
           multiline
         />
       </div>
+      
+      <div className="border-b pb-6 mb-6">
+        <h3 className="text-xl font-semibold mb-4">Integração Pipedrive/Make (Webhook)</h3>
+        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-4">
+          <p className="text-sm text-green-800 dark:text-green-200">
+            <strong>🚀 Integração Pipedrive:</strong> Para enviar dados do formulário diretamente para o Pipedrive, 
+            você deve configurar um cenário no Make (Integromat) ou Zapier e colar o URL do Webhook abaixo. 
+            Se este campo estiver preenchido, o formulário enviará os dados para o Webhook em vez de abrir o WhatsApp.
+          </p>
+        </div>
+        <ContentEditor 
+          contentKey="settings.makeWebhookUrl" 
+          label="URL do Webhook Make/Zapier" 
+        />
+      </div>
 
       <div className="border-b pb-6 mb-6">
         <h3 className="text-xl font-semibold mb-4">Pixels e Tracking</h3>

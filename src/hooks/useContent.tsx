@@ -173,6 +173,7 @@ const defaultContent: ContentData = {
   'settings.googleAnalytics': '',
   'settings.customScripts': '',
   'settings.typeform': '', // Typeform embed code or URL
+  'settings.makeWebhookUrl': '', // New field for Make/Zapier integration
   
   // Bio Page
   'bio.logo': '',

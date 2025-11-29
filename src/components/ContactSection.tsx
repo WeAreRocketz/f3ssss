@@ -25,9 +25,11 @@ const ContactSection = () => {
     whatsapp: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
     // Validate form data
     try {
@@ -47,12 +49,50 @@ const ContactSection = () => {
           description: "Por favor, corrija os erros antes de enviar.",
           variant: "destructive",
         });
+        setIsLoading(false);
         return;
       }
     }
     
-    // Format WhatsApp message
-    const message = `Olá! Vim pelo site da F3S.
+    const webhookUrl = content['settings.makeWebhookUrl'];
+
+    if (webhookUrl) {
+      // --- Send data to Webhook (Make/Zapier) ---
+      try {
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...formData,
+            source: window.location.href,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+
+        if (response.ok) {
+          toast({
+            title: "Sucesso!",
+            description: "Seu diagnóstico foi agendado. Entraremos em contato em breve.",
+          });
+        } else {
+          toast({
+            title: "Erro ao enviar",
+            description: "Houve um problema na comunicação. Tente novamente ou use o WhatsApp.",
+            variant: "destructive",
+          });
+        }
+      } catch (error) {
+        toast({
+          title: "Erro de conexão",
+          description: "Não foi possível conectar ao serviço de agendamento. Tente novamente.",
+          variant: "destructive",
+        });
+      }
+    } else {
+      // --- Default to WhatsApp redirection ---
+      const message = `Olá! Vim pelo site da F3S.
 
 *Nome:* ${formData.name}
 *Empresa:* ${formData.company}
@@ -61,21 +101,23 @@ const ContactSection = () => {
 
 Quero saber mais sobre o programa F3S TEAM!`;
 
-    // Clean WhatsApp number (remove all non-numeric characters)
-    const rawNumber = content['settings.whatsapp'] || '5547999999999';
-    const cleanNumber = rawNumber.replace(/\D/g, '');
-    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
-    
-    window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: "Redirecionando para WhatsApp!",
-      description: "Você será atendido em instantes.",
-    });
+      // Clean WhatsApp number (remove all non-numeric characters)
+      const rawNumber = content['settings.whatsapp'] || '5547999999999';
+      const cleanNumber = rawNumber.replace(/\D/g, '');
+      const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+      
+      window.open(whatsappUrl, '_blank');
+      
+      toast({
+        title: "Redirecionando para WhatsApp!",
+        description: "Você será atendido em instantes.",
+      });
+    }
 
     // Reset form
     setFormData({ name: "", company: "", role: "", whatsapp: "" });
     setErrors({});
+    setIsLoading(false);
   };
 
   return (
@@ -181,9 +223,10 @@ Quero saber mais sobre o programa F3S TEAM!`;
                 type="submit"
                 size="lg"
                 className="w-full"
+                disabled={isLoading}
               >
                 <Rocket className="w-5 h-5" />
-                Quero Treinar Minha Equipe com a F3S
+                {isLoading ? 'Enviando...' : 'Quero Treinar Minha Equipe com a F3S'}
                 <Send className="w-5 h-5" />
               </ShinyButton>
 
