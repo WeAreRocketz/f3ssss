@@ -17,6 +17,7 @@ import TeamProgramContentTab from '@/components/admin/TeamProgramContentTab';
 import BioContentTab from '@/components/admin/BioContentTab';
 import ImagesContentTab from '@/components/admin/ImagesContentTab';
 import SettingsContentTab from '@/components/admin/SettingsContentTab';
+import LeadsContentTab from '@/components/admin/LeadsContentTab'; // Import new tab
 
 const Admin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
@@ -123,10 +124,11 @@ const Admin = () => {
 
       <main className="container-custom py-8">
         <Tabs defaultValue="ecosystem" className="space-y-6" value={activeTab} onValueChange={setActiveTab}>
-          <TabsList className="grid grid-cols-3 lg:grid-cols-6 gap-2">
+          <TabsList className="grid grid-cols-3 lg:grid-cols-7 gap-2">
             <TabsTrigger value="ecosystem">Home (Ecossistema)</TabsTrigger>
             <TabsTrigger value="team-program">Programa Team</TabsTrigger>
             <TabsTrigger value="bio">Bio</TabsTrigger>
+            <TabsTrigger value="leads">Leads</TabsTrigger> {/* New Tab */}
             <TabsTrigger value="images">Imagens</TabsTrigger>
             <TabsTrigger value="settings">Configurações</TabsTrigger>
             <TabsTrigger value="versions">Histórico</TabsTrigger>
@@ -142,6 +144,10 @@ const Admin = () => {
           
           <TabsContent value="bio">
             <BioContentTab />
+          </TabsContent>
+
+          <TabsContent value="leads">
+            <LeadsContentTab />
           </TabsContent>
 
           <TabsContent value="images">
