@@ -11,15 +11,15 @@ const EcosystemFoundersSection = () => {
   const founders = [
     {
       name: content['founders.ariston.name'] || "Ariston Ferraz",
-      role: "Especialista em vendas online.",
+      role: content['founders.ariston.role'] || "Especialista em vendas online.",
       summary: content['founders.ariston.summary'] || "R$ 10 milhões faturados. Criador de métodos de escala e performance.",
       photo: content['image.ariston'] || aristonPhoto,
       icon: DollarSign,
     },
     {
       name: content['founders.gilvane.name'] || "Gilvane Soares",
-      role: "Especialista em branding e posicionamento.",
-      summary: content['founders.gilvane.summary'] || "Mais de 6 milhoes em vendas no ecommerce.",
+      role: content['founders.gilvane.role'] || "Especialista em branding e posicionamento.",
+      summary: content['founders.gilvane.summary'] || "Mais de 6 milhoes em vendas no ecommerce",
       photo: content['image.gilvane'] || gilvanePhoto,
       icon: Zap,
     }
