@@ -1,57 +1,40 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import PainSection from "@/components/PainSection";
-import DifferentialSection from "@/components/DifferentialSection";
-import FoundersSection from "@/components/FoundersSection";
-import LocationSection from "@/components/LocationSection";
-import ProgramSection from "@/components/ProgramSection";
-import ComparisonSection from "@/components/ComparisonSection";
-import ContactSection from "@/components/ContactSection";
+import EcosystemHero from "@/components/EcosystemHero";
+import InstitutionalSection from "@/components/InstitutionalSection";
+import SolutionsSection from "@/components/SolutionsSection";
+import MethodSection from "@/components/MethodSection";
+import WhyChooseSection from "@/components/WhyChooseSection";
+import EcosystemLocationSection from "@/components/EcosystemLocationSection";
+import EcosystemFoundersSection from "@/components/EcosystemFoundersSection";
+import EcosystemCTA from "@/components/EcosystemCTA";
 import Footer from "@/components/Footer";
-import ScrollReveal from "@/components/ScrollReveal";
-import GoldLight from "@/components/GoldLight";
 import TrackingScripts from "@/components/TrackingScripts";
+import GoldLight from "@/components/GoldLight";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
       <TrackingScripts />
       <Header />
-      <Hero />
       
-      <ScrollReveal>
-        <PainSection />
-      </ScrollReveal>
+      <EcosystemHero />
       
-      <div className="relative">
-        <GoldLight />
-        <ScrollReveal>
-          <DifferentialSection />
-        </ScrollReveal>
-      </div>
-      
-      <ScrollReveal>
-        <FoundersSection />
-      </ScrollReveal>
-      
-      <ScrollReveal>
-        <LocationSection />
-      </ScrollReveal>
+      <InstitutionalSection />
       
       <div className="relative">
         <GoldLight />
-        <ScrollReveal>
-          <ProgramSection />
-        </ScrollReveal>
+        <SolutionsSection />
       </div>
       
-      <ScrollReveal>
-        <ComparisonSection />
-      </ScrollReveal>
+      <MethodSection />
       
-      <ScrollReveal>
-        <ContactSection />
-      </ScrollReveal>
+      <WhyChooseSection />
+      
+      <EcosystemLocationSection />
+      
+      <EcosystemFoundersSection />
+      
+      <EcosystemCTA />
       
       <Footer />
     </main>

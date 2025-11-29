@@ -22,6 +22,7 @@ interface ContentContextType {
 const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
 const defaultContent: ContentData = {
+  // --- F3S TEAM Program Page (Old Index) ---
   // Hero Section
   'hero.headline': 'Cansado de pagar agências e',
   'hero.headline.gold': 'não ver resultado?',
@@ -39,7 +40,7 @@ const defaultContent: ContentData = {
   'differential.headline': 'O que torna a F3S única',
   'differential.subheadline': 'Não é um curso online. É uma formação presencial completa.',
   
-  // Founders Section
+  // Founders Section (Detailed descriptions for Team Program page)
   'founders.headline': 'Criada por quem viveu',
   'founders.headline.gold': 'o campo de batalha',
   'founders.headline.suffix': 'do digital',
@@ -67,6 +68,94 @@ const defaultContent: ContentData = {
   // Contact Section
   'contact.headline': 'Quer ter um time que entende, executa e escala o seu negócio?',
   'contact.subheadline': 'Agende um diagnóstico gratuito e descubra como aplicar o método F3S na sua empresa.',
+  
+  // --- F3S Ecosystem Home Page (New Index) ---
+  'ecosystem.hero.headline': 'Transformamos Pessoas, Processos e Estratégias em Crescimento Real.',
+  'ecosystem.hero.subheadline': 'A F3S é o ecossistema que integra formação, tecnologia e implementação, criando empresas capazes de crescer com autonomia, clareza e previsibilidade.',
+  'ecosystem.hero.bullet1': 'Treinamos sua equipe',
+  'ecosystem.hero.bullet2': 'Organizamos sua operação',
+  'ecosystem.hero.bullet3': 'Implementamos o seu funil de vendas',
+  'ecosystem.hero.cta': 'Conheça nossas 3 soluções',
+
+  'ecosystem.institutional.headline': 'O que é a F3S?',
+  'ecosystem.institutional.text1': 'A F3S é um ecossistema de estratégia e performance criado para transformar a forma como empresas crescem.',
+  'ecosystem.institutional.text2': 'Enquanto o mercado oferece cursos soltos, agências dependentes ou consultorias distantes, nós integramos tudo o que uma empresa moderna precisa:',
+  'ecosystem.institutional.pillar1': 'Pessoas fortes',
+  'ecosystem.institutional.pillar2': 'Sistemas claros',
+  'ecosystem.institutional.pillar3': 'Processos replicáveis',
+  'ecosystem.institutional.pillar4': 'Execução que gera vendas',
+  'ecosystem.institutional.motto': 'Nós acreditamos que crescimento não é sorte — é método.',
+
+  'ecosystem.solutions.headline': 'As 3 Soluções do Ecossistema F3S',
+
+  'ecosystem.solution1.title': 'F3S EDUCATION — Formação Presencial de Equipes',
+  'ecosystem.solution1.description': 'Treinamos pessoas para que sua empresa nunca mais dependa de terceiros.',
+  'ecosystem.solution1.subdescription': 'Formamos equipes internas capazes de operar marketing, funil, tráfego, vendas, conteúdo, métricas e gestão.',
+  'ecosystem.solution1.item1': 'F3S Team (até 3 pessoas)',
+  'ecosystem.solution1.item2': 'F3S Team Pro (4 a 10 pessoas)',
+  'ecosystem.solution1.item3': 'Formação para empresários (F3S Business Education)',
+  'ecosystem.solution1.item4': 'Workshops e imersões',
+  'ecosystem.solution1.item5': 'Certificação F3S (em breve)',
+  'ecosystem.solution1.cta': 'Clique para conhecer a F3S Education',
+  'ecosystem.solution1.url': '/team',
+
+  'ecosystem.solution2.title': 'F3S TECH — Tecnologia que organiza e acelera sua operação',
+  'ecosystem.solution2.description': 'Estruturamos tudo que sua empresa precisa para ter eficiência e previsibilidade.',
+  'ecosystem.solution2.subdescription': 'Automação, CRM, dashboards, rotinas e a infraestrutura completa para operar com consistência.',
+  'ecosystem.solution2.item1': 'CRM configurado e integrado',
+  'ecosystem.solution2.item2': 'Automação Make',
+  'ecosystem.solution2.item3': 'Dashboards e KPIs',
+  'ecosystem.solution2.item4': 'Padrões técnicos de funil',
+  'ecosystem.solution2.item5': 'Infraestrutura operacional',
+  'ecosystem.solution2.item6': 'Sistema de dados e indicadores',
+  'ecosystem.solution2.cta': 'Clique para conhecer a F3S Tech',
+  'ecosystem.solution2.url': '#contact',
+
+  'ecosystem.solution3.title': 'F3S PERFORMANCE — Implementação real e geração de resultado',
+  'ecosystem.solution3.description': 'Aqui é onde sua estratégia vira vendas.',
+  'ecosystem.solution3.subdescription': 'Executamos a arquitetura do seu funil, campanhas, comunicação, análises e todo o motor de crescimento.',
+  'ecosystem.solution3.item1': 'Funil completo',
+  'ecosystem.solution3.item2': 'Criativos e copy',
+  'ecosystem.solution3.item3': 'Tráfego pago',
+  'ecosystem.solution3.item4': 'Conteúdo',
+  'ecosystem.solution3.item5': 'Otimizações semanais',
+  'ecosystem.solution3.item6': 'Mapeamento e crescimento contínuo',
+  'ecosystem.solution3.cta': 'Clique para conhecer a F3S Performance',
+  'ecosystem.solution3.url': '#contact',
+
+  'ecosystem.method.headline': 'O Método F3S (os 3 fundamentos)',
+  'ecosystem.method.subheadline': 'O Crescimento Acontece Assim:',
+  'ecosystem.method.step1.title': 'Clareza Estratégica',
+  'ecosystem.method.step1.description': 'Direção, oferta, posicionamento e foco.',
+  'ecosystem.method.step2.title': 'Estrutura Inteligente',
+  'ecosystem.method.step2.description': 'Sistemas, tecnologia, processos e organização.',
+  'ecosystem.method.step3.title': 'Ação Contínua',
+  'ecosystem.method.step3.description': 'Execução, testes, acompanhamento e otimização.',
+  'ecosystem.method.motto': 'Clareza cria direção. Estrutura cria velocidade. Ação cria resultado.',
+
+  'ecosystem.why.headline': 'Por que escolher a F3S?',
+  'ecosystem.why.item1': 'Treinamento presencial e prático',
+  'ecosystem.why.item2': 'Método aplicado em empresas reais',
+  'ecosystem.why.item3': 'Estrutura física premium',
+  'ecosystem.why.item4': 'Especialistas com resultados comprovados',
+  'ecosystem.why.item5': 'Entregas claras e acompanhamento real',
+  'ecosystem.why.item6': 'Integração entre equipe + sistema + performance',
+
+  'ecosystem.location.headline': 'O Ecossistema F3S por dentro',
+  'ecosystem.location.item1': 'Escritório de 120m² em Itapema/SC',
+  'ecosystem.location.item2': 'Salas de treinamento',
+  'ecosystem.location.item3': 'Sala de estratégia',
+  'ecosystem.location.item4': 'Ambiente premium',
+  'ecosystem.location.item5': 'Estrutura de gravação',
+  'ecosystem.location.item6': 'Tecnologia de ponta',
+  
+  'founders.ariston.summary': 'Especialista em vendas online. R$ 10 milhões faturados. Criador de métodos de escala e performance.',
+  'founders.gilvane.summary': 'Especialista em branding e posicionamento. Mais de 6 milhoes em vendas no ecommerce.',
+  'founders.quote.ecosystem': 'Criamos a F3S para formar equipes fortes, estratégias sólidas e sistemas que transformam empresas.',
+
+  'ecosystem.cta.headline': 'Pronto para transformar sua empresa em uma máquina de crescimento?',
+  'ecosystem.cta.subheadline': 'Clique abaixo para agendar um diagnóstico e conhecer a solução ideal para você.',
+  'ecosystem.cta.button': 'AGENDAR DIAGNÓSTICO GRATUITO',
   
   // Images (store URLs or base64)
   'image.logo': '',

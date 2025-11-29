@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, LogOut, Save } from 'lucide-react';
+import { Lock, LogOut, Save, Link } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
@@ -176,17 +176,151 @@ const Admin = () => {
       </header>
 
       <main className="container-custom py-8">
-        <Tabs defaultValue="homepage" className="space-y-6">
+        <Tabs defaultValue="ecosystem" className="space-y-6">
           <TabsList className="grid grid-cols-2 lg:grid-cols-5 gap-2">
-            <TabsTrigger value="homepage">Homepage</TabsTrigger>
+            <TabsTrigger value="ecosystem">Home (Ecossistema)</TabsTrigger>
+            <TabsTrigger value="team-program">Programa Team</TabsTrigger>
             <TabsTrigger value="bio">Bio</TabsTrigger>
             <TabsTrigger value="images">Imagens</TabsTrigger>
             <TabsTrigger value="settings">Configurações</TabsTrigger>
             <TabsTrigger value="versions">Histórico</TabsTrigger>
           </TabsList>
           
-          {/* Homepage Tab with nested tabs */}
-          <TabsContent value="homepage">
+          {/* Ecosystem Home Page Tab */}
+          <TabsContent value="ecosystem">
+            <Tabs defaultValue="hero" className="space-y-6">
+              <TabsList className="grid grid-cols-3 lg:grid-cols-5 gap-2">
+                <TabsTrigger value="hero">Hero</TabsTrigger>
+                <TabsTrigger value="institutional">Institucional</TabsTrigger>
+                <TabsTrigger value="solutions">Soluções</TabsTrigger>
+                <TabsTrigger value="method">Método</TabsTrigger>
+                <TabsTrigger value="why-choose">Por que F3S</TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero (Ecossistema)</h2>
+                <ContentEditor contentKey="ecosystem.hero.headline" label="Título Principal" />
+                <ContentEditor contentKey="ecosystem.hero.subheadline" label="Subtítulo" multiline />
+                <ContentEditor contentKey="ecosystem.hero.bullet1" label="Bullet 1" />
+                <ContentEditor contentKey="ecosystem.hero.bullet2" label="Bullet 2" />
+                <ContentEditor contentKey="ecosystem.hero.bullet3" label="Bullet 3" />
+                <ContentEditor contentKey="ecosystem.hero.cta" label="Texto do CTA" />
+              </TabsContent>
+
+              <TabsContent value="institutional" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Institucional</h2>
+                <ContentEditor contentKey="ecosystem.institutional.headline" label="Título" />
+                <ContentEditor contentKey="ecosystem.institutional.text1" label="Texto 1" multiline />
+                <ContentEditor contentKey="ecosystem.institutional.text2" label="Texto 2" multiline />
+                <ContentEditor contentKey="ecosystem.institutional.pillar1" label="Pilar 1" />
+                <ContentEditor contentKey="ecosystem.institutional.pillar2" label="Pilar 2" />
+                <ContentEditor contentKey="ecosystem.institutional.pillar3" label="Pilar 3" />
+                <ContentEditor contentKey="ecosystem.institutional.pillar4" label="Pilar 4" />
+                <ContentEditor contentKey="ecosystem.institutional.motto" label="Motto Final" />
+              </TabsContent>
+
+              <TabsContent value="solutions" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Soluções</h2>
+                <ContentEditor contentKey="ecosystem.solutions.headline" label="Título da Seção" />
+                
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">Solução 1: F3S EDUCATION</h3>
+                  <ContentEditor contentKey="ecosystem.solution1.title" label="Título" />
+                  <ContentEditor contentKey="ecosystem.solution1.description" label="Descrição Curta" />
+                  <ContentEditor contentKey="ecosystem.solution1.subdescription" label="Sub-descrição" />
+                  <ContentEditor contentKey="ecosystem.solution1.item1" label="Item 1" />
+                  <ContentEditor contentKey="ecosystem.solution1.item2" label="Item 2" />
+                  <ContentEditor contentKey="ecosystem.solution1.item3" label="Item 3" />
+                  <ContentEditor contentKey="ecosystem.solution1.item4" label="Item 4" />
+                  <ContentEditor contentKey="ecosystem.solution1.item5" label="Item 5" />
+                  <ContentEditor contentKey="ecosystem.solution1.cta" label="Texto CTA" />
+                  <ContentEditor contentKey="ecosystem.solution1.url" label="URL CTA (Ex: /team)" />
+                </div>
+
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">Solução 2: F3S TECH</h3>
+                  <ContentEditor contentKey="ecosystem.solution2.title" label="Título" />
+                  <ContentEditor contentKey="ecosystem.solution2.description" label="Descrição Curta" />
+                  <ContentEditor contentKey="ecosystem.solution2.subdescription" label="Sub-descrição" />
+                  <ContentEditor contentKey="ecosystem.solution2.item1" label="Item 1" />
+                  <ContentEditor contentKey="ecosystem.solution2.item2" label="Item 2" />
+                  <ContentEditor contentKey="ecosystem.solution2.item3" label="Item 3" />
+                  <ContentEditor contentKey="ecosystem.solution2.item4" label="Item 4" />
+                  <ContentEditor contentKey="ecosystem.solution2.item5" label="Item 5" />
+                  <ContentEditor contentKey="ecosystem.solution2.item6" label="Item 6" />
+                  <ContentEditor contentKey="ecosystem.solution2.cta" label="Texto CTA" />
+                  <ContentEditor contentKey="ecosystem.solution2.url" label="URL CTA (Ex: #contact)" />
+                </div>
+
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">Solução 3: F3S PERFORMANCE</h3>
+                  <ContentEditor contentKey="ecosystem.solution3.title" label="Título" />
+                  <ContentEditor contentKey="ecosystem.solution3.description" label="Descrição Curta" />
+                  <ContentEditor contentKey="ecosystem.solution3.subdescription" label="Sub-descrição" />
+                  <ContentEditor contentKey="ecosystem.solution3.item1" label="Item 1" />
+                  <ContentEditor contentKey="ecosystem.solution3.item2" label="Item 2" />
+                  <ContentEditor contentKey="ecosystem.solution3.item3" label="Item 3" />
+                  <ContentEditor contentKey="ecosystem.solution3.item4" label="Item 4" />
+                  <ContentEditor contentKey="ecosystem.solution3.item5" label="Item 5" />
+                  <ContentEditor contentKey="ecosystem.solution3.item6" label="Item 6" />
+                  <ContentEditor contentKey="ecosystem.solution3.cta" label="Texto CTA" />
+                  <ContentEditor contentKey="ecosystem.solution3.url" label="URL CTA (Ex: #contact)" />
+                </div>
+              </TabsContent>
+
+              <TabsContent value="method" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Método</h2>
+                <ContentEditor contentKey="ecosystem.method.headline" label="Título" />
+                <ContentEditor contentKey="ecosystem.method.subheadline" label="Subtítulo" />
+                <ContentEditor contentKey="ecosystem.method.step1.title" label="Passo 1 Título" />
+                <ContentEditor contentKey="ecosystem.method.step1.description" label="Passo 1 Descrição" />
+                <ContentEditor contentKey="ecosystem.method.step2.title" label="Passo 2 Título" />
+                <ContentEditor contentKey="ecosystem.method.step2.description" label="Passo 2 Descrição" />
+                <ContentEditor contentKey="ecosystem.method.step3.title" label="Passo 3 Título" />
+                <ContentEditor contentKey="ecosystem.method.step3.description" label="Passo 3 Descrição" />
+                <ContentEditor contentKey="ecosystem.method.motto" label="Motto Final" multiline />
+              </TabsContent>
+
+              <TabsContent value="why-choose" className="space-y-6 bg-card rounded-2xl p-6">
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Por que F3S</h2>
+                <ContentEditor contentKey="ecosystem.why.headline" label="Título" />
+                <ContentEditor contentKey="ecosystem.why.item1" label="Item 1" />
+                <ContentEditor contentKey="ecosystem.why.item2" label="Item 2" />
+                <ContentEditor contentKey="ecosystem.why.item3" label="Item 3" />
+                <ContentEditor contentKey="ecosystem.why.item4" label="Item 4" />
+                <ContentEditor contentKey="ecosystem.why.item5" label="Item 5" />
+                <ContentEditor contentKey="ecosystem.why.item6" label="Item 6" />
+                
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">Localização e Estrutura</h3>
+                  <ContentEditor contentKey="ecosystem.location.headline" label="Título da Estrutura" />
+                  <ContentEditor contentKey="ecosystem.location.item1" label="Item Estrutura 1" />
+                  <ContentEditor contentKey="ecosystem.location.item2" label="Item Estrutura 2" />
+                  <ContentEditor contentKey="ecosystem.location.item3" label="Item Estrutura 3" />
+                  <ContentEditor contentKey="ecosystem.location.item4" label="Item Estrutura 4" />
+                  <ContentEditor contentKey="ecosystem.location.item5" label="Item Estrutura 5" />
+                  <ContentEditor contentKey="ecosystem.location.item6" label="Item Estrutura 6" />
+                </div>
+
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">Fundadores (Resumo)</h3>
+                  <ContentEditor contentKey="founders.ariston.summary" label="Ariston Resumo" multiline />
+                  <ContentEditor contentKey="founders.gilvane.summary" label="Gilvane Resumo" multiline />
+                  <ContentEditor contentKey="founders.quote.ecosystem" label="Citação Final Fundadores" multiline />
+                </div>
+
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="text-xl font-semibold mb-3">CTA Final</h3>
+                  <ContentEditor contentKey="ecosystem.cta.headline" label="Título CTA Final" />
+                  <ContentEditor contentKey="ecosystem.cta.subheadline" label="Subtítulo CTA Final" />
+                  <ContentEditor contentKey="ecosystem.cta.button" label="Texto do Botão CTA Final" />
+                </div>
+              </TabsContent>
+            </Tabs>
+          </TabsContent>
+
+          {/* Team Program Tab (Old Homepage Content) */}
+          <TabsContent value="team-program">
             <Tabs defaultValue="hero" className="space-y-6">
               <TabsList className="grid grid-cols-3 lg:grid-cols-7 gap-2">
                 <TabsTrigger value="hero">Hero</TabsTrigger>
@@ -199,7 +333,7 @@ const Admin = () => {
               </TabsList>
 
               <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
-                <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero</h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero (Programa Team)</h2>
                 <ContentEditor contentKey="hero.headline" label="Título Principal (Parte 1)" />
                 <ContentEditor contentKey="hero.headline.gold" label="Título Principal (Parte Dourada)" />
                 <ContentEditor contentKey="hero.subheadline" label="Subtítulo" />
@@ -207,7 +341,7 @@ const Admin = () => {
               </TabsContent>
 
               <TabsContent value="pain" className="space-y-6 bg-card rounded-2xl p-6">
-                <h2 className="text-2xl font-heading font-bold mb-4">Seção Pain</h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Pain (Programa Team)</h2>
                 <ContentEditor contentKey="pain.headline" label="Título" />
                 <ContentEditor contentKey="pain.subheadline" label="Subtítulo" />
                 <ContentEditor contentKey="pain.text1" label="Texto 1" multiline />
@@ -216,13 +350,13 @@ const Admin = () => {
               </TabsContent>
 
               <TabsContent value="differential" className="space-y-6 bg-card rounded-2xl p-6">
-                <h2 className="text-2xl font-heading font-bold mb-4">Seção Diferenciais</h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Diferenciais (Programa Team)</h2>
                 <ContentEditor contentKey="differential.headline" label="Título" />
                 <ContentEditor contentKey="differential.subheadline" label="Subtítulo" />
               </TabsContent>
 
               <TabsContent value="founders" className="space-y-6 bg-card rounded-2xl p-6">
-                <h2 className="text-2xl font-heading font-bold mb-4">Seção Fundadores</h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Fundadores (Programa Team - Detalhado)</h2>
                 <ContentEditor contentKey="founders.headline" label="Título da Seção (Parte 1)" />
                 <ContentEditor contentKey="founders.headline.gold" label="Título da Seção (Parte Dourada)" />
                 <ContentEditor contentKey="founders.headline.suffix" label="Título da Seção (Parte Final)" />
@@ -249,13 +383,13 @@ const Admin = () => {
               </TabsContent>
 
               <TabsContent value="program" className="space-y-6 bg-card rounded-2xl p-6">
-                <h2 className="text-2xl font-heading font-bold mb-4">Seção Programa</h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Programa (Programa Team)</h2>
                 <ContentEditor contentKey="program.headline" label="Título" />
                 <ContentEditor contentKey="program.subheadline" label="Subtítulo" />
               </TabsContent>
 
               <TabsContent value="location" className="space-y-6 bg-card rounded-2xl p-6">
-                <h2 className="text-2xl font-heading font-bold mb-4">Seção Localização</h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Localização (Programa Team)</h2>
                 <ContentEditor contentKey="location.headline" label="Título (Parte 1)" />
                 <ContentEditor contentKey="location.headline.gold" label="Título (Parte Dourada)" />
                 <ContentEditor contentKey="location.subheadline" label="Subtítulo" />
@@ -264,7 +398,7 @@ const Admin = () => {
               </TabsContent>
 
               <TabsContent value="contact" className="space-y-6 bg-card rounded-2xl p-6">
-                <h2 className="text-2xl font-heading font-bold mb-4">Seção Contato</h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Seção Contato (Programa Team)</h2>
                 <ContentEditor contentKey="contact.headline" label="Título" />
                 <ContentEditor contentKey="contact.subheadline" label="Subtítulo" />
               </TabsContent>
