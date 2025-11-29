@@ -43,7 +43,10 @@ const InstitutionalSection = () => {
               <ScrollReveal key={index} delay={400 + index * 100}>
                 <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/20 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 shadow-lg flex flex-col items-center h-full text-center">
                   <pillar.icon className="w-8 h-8 text-accent mb-3 gold-shine-dark" />
-                  <h4 className="font-heading font-semibold text-lg">{pillar.title}</h4>
+                  <h4 
+                    className="font-heading font-semibold text-lg"
+                    dangerouslySetInnerHTML={{ __html: pillar.title }}
+                  />
                 </div>
               </ScrollReveal>
             ))}
