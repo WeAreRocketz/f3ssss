@@ -19,6 +19,7 @@ const Admin = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const { content, updateContent, resetContent, saveVersion } = useContent();
+  const [activeTab, setActiveTab] = useState('ecosystem');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -176,8 +177,8 @@ const Admin = () => {
       </header>
 
       <main className="container-custom py-8">
-        <Tabs defaultValue="ecosystem" className="space-y-6">
-          <TabsList className="grid grid-cols-2 lg:grid-cols-5 gap-2">
+        <Tabs defaultValue="ecosystem" className="space-y-6" value={activeTab} onValueChange={setActiveTab}>
+          <TabsList className="grid grid-cols-3 lg:grid-cols-6 gap-2">
             <TabsTrigger value="ecosystem">Home (Ecossistema)</TabsTrigger>
             <TabsTrigger value="team-program">Programa Team</TabsTrigger>
             <TabsTrigger value="bio">Bio</TabsTrigger>
