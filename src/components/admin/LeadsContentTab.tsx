@@ -57,17 +57,17 @@ const LeadsContentTab = () => {
 
       <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
         <p className="text-sm text-blue-800 dark:text-blue-200">
-          <strong>💡 Fluxo de Dados:</strong> O formulário envia os dados diretamente para o Zapier (via Webhook), que então salva no Google Sheets e no Pipedrive.
+          <strong>💡 Fluxo de Dados:</strong> O formulário envia os dados diretamente para o Zapier (via Webhook), que cria o Negócio e a Pessoa no Pipedrive.
         </p>
         <p className="text-sm text-blue-800 dark:text-blue-200 mt-2">
-          <strong>⚠️ Visibilidade:</strong> Para visualizar, filtrar e exportar os leads, você deve acessar sua planilha no Google Sheets ou o Pipedrive diretamente. O Painel Admin não armazena os leads.
+          <strong>⚠️ Visibilidade:</strong> Para visualizar, filtrar e exportar os leads, você deve acessar o Pipedrive diretamente. O Painel Admin não armazena os leads.
         </p>
       </div>
 
       <div className="space-y-4 border-t pt-6">
         <h3 className="font-semibold text-lg">Ferramentas de Exportação</h3>
         <p className="text-muted-foreground text-sm">
-          Use o botão abaixo para baixar um template CSV que corresponde ao formato de importação do Pipedrive, caso precise de uma exportação manual.
+          Use o botão abaixo para baixar um template CSV que corresponde ao formato de importação do Pipedrive, caso precise de uma exportação manual ou para garantir que seus dados no Zapier estejam mapeados corretamente.
         </p>
         <Button onClick={generatePipedriveCsvTemplate} className="bg-accent hover:bg-accent/90">
           <FileText className="w-4 h-4 mr-2" />
