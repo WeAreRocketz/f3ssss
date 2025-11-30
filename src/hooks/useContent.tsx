@@ -163,7 +163,7 @@ const defaultContent: ContentData = {
   'specialists.davi.name': 'Davi Azevedo',
   'specialists.davi.role': 'Especialista em Vendas Outbound / Head Comercial do Grupo F3S',
   'specialists.davi.quote': 'Eu não nasci sabendo vender. Eu fui formado.',
-  'specialists.davi.description': 'Formado por processos, por método, por disciplina e por gente que entendia que vendas não é talento — é educação comercial. E é exatamente isso que faço hoje como Head Comercial da FS3: pego equipes comuns e transformo vendedores em profissionais de alta performance, usando a mesma estrutura que me moldou. Sou fruto de um bom processo. E agora, formo pessoas que querem viver o mesmo padrão.',
+  'specialists.davi.description': 'Formado por processos, por método, por disciplina e por gente que entendia que vendas não é talento — é educação comercial. E é exatamente isso que faço hoje como Head Comercial da F3S: pego equipes comuns e transformo vendedores em profissionais de alta performance, usando a mesma estrutura que me moldou. Sou fruto de um bom processo. E agora, formo pessoas que querem viver o mesmo padrão.',
 
   // Images (store URLs or base64)
   'image.logo': '',
