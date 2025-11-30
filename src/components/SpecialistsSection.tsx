@@ -1,7 +1,7 @@
 import { Quote } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useContent } from "@/hooks/useContent";
-import daviPhoto from "@/assets/image.png";
+import daviPhoto from "@/assets/35b81241-0ea9-47e8-bb5a-cdcaa7aff4c7.jpeg";
 
 const SpecialistsSection = () => {
   const { content } = useContent();
