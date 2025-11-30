@@ -28,7 +28,7 @@ const Header = () => {
     { label: "O Ecossistema", id: "institutional", isScroll: true, targetPath: '/' },
     { label: "Soluções", id: "solutions", isScroll: true, targetPath: '/' },
     { label: "Método", id: "method", isScroll: true, targetPath: '/' },
-    { label: "F3S Team", id: "team", isScroll: false, targetPath: '/team' },
+    { label: "F3S Academy", id: "academy", isScroll: false, targetPath: '/academy' },
   ];
 
 
@@ -44,7 +44,7 @@ const Header = () => {
         // Navigate to home page and include hash for scrolling
         navigate(`/${item.targetPath === '/' ? '' : item.targetPath}#${item.id}`);
       } else {
-        // Navigate to a different page (like /team)
+        // Navigate to a different page (like /academy)
         navigate(item.targetPath);
       }
     } else if (item.id === 'hero') {

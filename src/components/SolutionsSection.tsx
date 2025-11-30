@@ -119,7 +119,7 @@ const SolutionsSection = () => {
 
                   <ul className="space-y-3 pt-4 flex-grow">
                     {solution.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
+                      <li key={i} className="flex items-start gap-3 p-4 rounded-xl bg-secondary/30 hover:bg-accent/5 transition-all">
                         <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-1 gold-shine-light" />
                         <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
                       </li>

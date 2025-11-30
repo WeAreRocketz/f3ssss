@@ -12,7 +12,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import GoldLight from "@/components/GoldLight";
 import TrackingScripts from "@/components/TrackingScripts";
 
-const TeamProgram = () => {
+const Academy = () => {
   return (
     <main className="min-h-screen">
       <TrackingScripts />
@@ -58,4 +58,4 @@ const TeamProgram = () => {
   );
 };
 
-export default TeamProgram;
+export default Academy;

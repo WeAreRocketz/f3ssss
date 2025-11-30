@@ -1,12 +1,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import ContentEditor from './ContentEditor';
 
-const TeamProgramContentTab = () => {
+const AcademyContentTab = () => {
   return (
     <Tabs defaultValue="hero" className="space-y-6">
       <TabsList className="grid grid-cols-3 lg:grid-cols-7 gap-2">
         <TabsTrigger value="hero">Hero</TabsTrigger>
-        <TabsTrigger value="pain">Pain</TabsTrigger>
+        <TabsTrigger value="pain">Dor</TabsTrigger>
         <TabsTrigger value="differential">Diferenciais</TabsTrigger>
         <TabsTrigger value="founders">Fundadores</TabsTrigger>
         <TabsTrigger value="program">Programa</TabsTrigger>
@@ -15,7 +15,7 @@ const TeamProgramContentTab = () => {
       </TabsList>
 
       <TabsContent value="hero" className="space-y-6 bg-card rounded-2xl p-6">
-        <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero (Programa Team)</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4">Seção Hero (Página Academy)</h2>
         <ContentEditor contentKey="hero.headline" label="Título Principal (Parte 1)" />
         <ContentEditor contentKey="hero.headline.gold" label="Título Principal (Parte Dourada)" />
         <ContentEditor contentKey="hero.subheadline" label="Subtítulo" />
@@ -23,7 +23,7 @@ const TeamProgramContentTab = () => {
       </TabsContent>
 
       <TabsContent value="pain" className="space-y-6 bg-card rounded-2xl p-6">
-        <h2 className="text-2xl font-heading font-bold mb-4">Seção Pain (Programa Team)</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4">Seção Dor (Página Academy)</h2>
         <ContentEditor contentKey="pain.headline" label="Título" />
         <ContentEditor contentKey="pain.subheadline" label="Subtítulo" />
         <ContentEditor contentKey="pain.text1" label="Texto 1" multiline />
@@ -32,13 +32,13 @@ const TeamProgramContentTab = () => {
       </TabsContent>
 
       <TabsContent value="differential" className="space-y-6 bg-card rounded-2xl p-6">
-        <h2 className="text-2xl font-heading font-bold mb-4">Seção Diferenciais (Programa Team)</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4">Seção Diferenciais (Página Academy)</h2>
         <ContentEditor contentKey="differential.headline" label="Título" />
         <ContentEditor contentKey="differential.subheadline" label="Subtítulo" />
       </TabsContent>
 
       <TabsContent value="founders" className="space-y-6 bg-card rounded-2xl p-6">
-        <h2 className="text-2xl font-heading font-bold mb-4">Seção Fundadores (Programa Team - Detalhado)</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4">Seção Fundadores (Página Academy - Detalhado)</h2>
         <ContentEditor contentKey="founders.headline" label="Título da Seção (Parte 1)" />
         <ContentEditor contentKey="founders.headline.gold" label="Título da Seção (Parte Dourada)" />
         <ContentEditor contentKey="founders.headline.suffix" label="Título da Seção (Parte Final)" />
@@ -65,13 +65,13 @@ const TeamProgramContentTab = () => {
       </TabsContent>
 
       <TabsContent value="program" className="space-y-6 bg-card rounded-2xl p-6">
-        <h2 className="text-2xl font-heading font-bold mb-4">Seção Programa (Programa Team)</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4">Seção Programa (Página Academy)</h2>
         <ContentEditor contentKey="program.headline" label="Título" />
         <ContentEditor contentKey="program.subheadline" label="Subtítulo" />
       </TabsContent>
 
       <TabsContent value="location" className="space-y-6 bg-card rounded-2xl p-6">
-        <h2 className="text-2xl font-heading font-bold mb-4">Seção Localização (Programa Team)</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4">Seção Localização (Página Academy)</h2>
         <ContentEditor contentKey="location.headline" label="Título (Parte 1)" />
         <ContentEditor contentKey="location.headline.gold" label="Título (Parte Dourada)" />
         <ContentEditor contentKey="location.subheadline" label="Subtítulo" />
@@ -80,7 +80,7 @@ const TeamProgramContentTab = () => {
       </TabsContent>
 
       <TabsContent value="contact" className="space-y-6 bg-card rounded-2xl p-6">
-        <h2 className="text-2xl font-heading font-bold mb-4">Seção Contato (Programa Team)</h2>
+        <h2 className="text-2xl font-heading font-bold mb-4">Seção Contato (Página Academy)</h2>
         <ContentEditor contentKey="contact.headline" label="Título" />
         <ContentEditor contentKey="contact.subheadline" label="Subtítulo" />
       </TabsContent>
@@ -88,4 +88,4 @@ const TeamProgramContentTab = () => {
   );
 };
 
-export default TeamProgramContentTab;
+export default AcademyContentTab;

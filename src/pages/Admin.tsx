@@ -13,7 +13,7 @@ import f3sLogo from '@/assets/f3s-logo.png';
 // Modularized components
 import AdminHeader from '@/components/admin/AdminHeader';
 import EcosystemContentTab from '@/components/admin/EcosystemContentTab';
-import TeamProgramContentTab from '@/components/admin/TeamProgramContentTab';
+import AcademyContentTab from '@/components/admin/AcademyContentTab';
 import BioContentTab from '@/components/admin/BioContentTab';
 import ImagesContentTab from '@/components/admin/ImagesContentTab';
 import SettingsContentTab from '@/components/admin/SettingsContentTab';
@@ -126,9 +126,9 @@ const Admin = () => {
         <Tabs defaultValue="ecosystem" className="space-y-6" value={activeTab} onValueChange={setActiveTab}>
           <TabsList className="grid grid-cols-3 lg:grid-cols-7 gap-2">
             <TabsTrigger value="ecosystem">Home (Ecossistema)</TabsTrigger>
-            <TabsTrigger value="team-program">Programa Team</TabsTrigger>
+            <TabsTrigger value="team-program">Academy</TabsTrigger>
             <TabsTrigger value="bio">Bio</TabsTrigger>
-            <TabsTrigger value="leads">Leads</TabsTrigger> {/* New Tab */}
+            <TabsTrigger value="leads">Leads</TabsTrigger>
             <TabsTrigger value="images">Imagens</TabsTrigger>
             <TabsTrigger value="settings">Configurações</TabsTrigger>
             <TabsTrigger value="versions">Histórico</TabsTrigger>
@@ -139,7 +139,7 @@ const Admin = () => {
           </TabsContent>
 
           <TabsContent value="team-program">
-            <TeamProgramContentTab />
+            <AcademyContentTab />
           </TabsContent>
           
           <TabsContent value="bio">
