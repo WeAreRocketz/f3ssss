@@ -123,6 +123,16 @@ const EcosystemContentTab = () => {
           <ContentEditor contentKey="founders.gilvane.summary" label="Gilvane Resumo" multiline />
           <ContentEditor contentKey="founders.quote.ecosystem" label="Citação Final Fundadores" multiline />
         </div>
+        
+        <div className="border-t pt-4 mt-4">
+          <h3 className="text-xl font-semibold mb-3">Especialistas</h3>
+          <ContentEditor contentKey="specialists.headline" label="Título da Seção Especialistas" />
+          <ContentEditor contentKey="specialists.subheadline" label="Subtítulo da Seção Especialistas" />
+          <ContentEditor contentKey="specialists.davi.name" label="Davi Azevedo Nome" />
+          <ContentEditor contentKey="specialists.davi.role" label="Davi Azevedo Cargo" />
+          <ContentEditor contentKey="specialists.davi.quote" label="Davi Azevedo Citação" multiline />
+          <ContentEditor contentKey="specialists.davi.description" label="Davi Azevedo Descrição" multiline />
+        </div>
 
         <div className="border-t pt-4 mt-4">
           <h3 className="text-xl font-semibold mb-3">CTA Final</h3>

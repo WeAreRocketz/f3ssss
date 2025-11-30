@@ -36,6 +36,15 @@ const ImagesContentTab = () => {
         
         <div className="border-t pt-6">
           <ImageUploader
+            label="Foto do Davi Azevedo (Especialista)"
+            contentKey="image.davi"
+            currentImage={content['image.davi']}
+            onImageChange={updateContent}
+          />
+        </div>
+        
+        <div className="border-t pt-6">
+          <ImageUploader
             label="Foto do Escritório"
             contentKey="image.office"
             currentImage={content['image.office']}
