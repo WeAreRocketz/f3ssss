@@ -5,7 +5,7 @@ import SolutionsSection from "@/components/SolutionsSection";
 import MethodSection from "@/components/MethodSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import EcosystemLocationSection from "@/components/EcosystemLocationSection";
-import EcosystemFoundersSection from "@/components/EcosystemFoundersSection";
+import FoundersSection from "@/components/FoundersSection"; // Importing the detailed version
 import EcosystemCTA from "@/components/EcosystemCTA";
 import Footer from "@/components/Footer";
 import TrackingScripts from "@/components/TrackingScripts";
@@ -32,7 +32,8 @@ const Index = () => {
       
       <EcosystemLocationSection />
       
-      <EcosystemFoundersSection />
+      {/* Using the detailed FoundersSection */}
+      <FoundersSection /> 
       
       <EcosystemCTA />
       

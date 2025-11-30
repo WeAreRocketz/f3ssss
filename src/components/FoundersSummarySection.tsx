@@ -5,7 +5,7 @@ import ShinyBanner from "@/components/ShinyBanner";
 import { useContent } from "@/hooks/useContent";
 import { DollarSign, Zap } from "lucide-react";
 
-const EcosystemFoundersSection = () => {
+const FoundersSummarySection = () => {
   const { content } = useContent();
   
   const founders = [
@@ -19,7 +19,7 @@ const EcosystemFoundersSection = () => {
     {
       name: content['founders.gilvane.name'] || "Gilvane Soares",
       role: content['founders.gilvane.role'] || "Especialista em branding e posicionamento.",
-      summary: content['founders.gilvane.summary'] || "Mais de 6 milhoes em vendas no ecommerce",
+      summary: content['founders.gilvane.summary'] || "Mais de 6 milhoes em vendas no ecommerce.",
       photo: content['image.gilvane'] || gilvanePhoto,
       icon: Zap,
     }
@@ -79,4 +79,4 @@ const EcosystemFoundersSection = () => {
   );
 };
 
-export default EcosystemFoundersSection;
+export default FoundersSummarySection;
